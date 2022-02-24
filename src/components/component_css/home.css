@@ -1,0 +1,43 @@
+/* home css */
+.fader {
+	animation-name: fadeOutAnimation;
+    animation-duration: 1.5s;
+    animation-fill-mode:forwards;
+    transition: transform 1s;
+}
+
+@keyframes fadeOutAnimation{
+    0%{
+        opacity: 1;
+        transform-style: preserve-3d;
+        transform: translateX(-30vw);
+        filter: blur(10px)
+    }
+    
+    100%{
+        opacity: 0;
+        transform-style: preserve-3d;
+        transform: translateX(-50vw) rotateY(90deg);
+        filter: blur(0px);
+    }
+}
+
+/* navbar css */
+.addBlur{
+    backdrop-filter:blur(10px);
+}
+
+/* .fader {
+	animation-name: fadeOutAnimation;
+	animation-duration: 3s;
+	animation-fill-mode: both;
+}
+
+@keyframes fadeOutAnimation {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+} */
