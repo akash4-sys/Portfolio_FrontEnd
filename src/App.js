@@ -1,14 +1,14 @@
 import React from 'react';
 import './App.css';
 import Navbar from './components/Navbar'
-import Home from './components/Home'
+import HomeSection from './components/HomeSection/HomeSection'
 
 function App() {
 
 	return (
 		<div className="App">
 			<Navbar/>
-			<Home/>
+			<HomeSection/>
 		</div>
 	);
 }

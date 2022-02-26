@@ -5,7 +5,7 @@ import './component_css/home.css'
 function Navbar() {
 
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark fixed-top z-index-1 ">
+        <nav className="navbar navbar-expand-lg navbar-dark fixed-top z-index-2 p-0">
             <div className="container-fluid addBlur">
                 <a className="navbar-brand ms-3" href="/">
                     <UserImg src="/images/icon.gif" />
