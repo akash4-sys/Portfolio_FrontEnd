@@ -18,7 +18,7 @@ export default TextBox;
 const animation = keyframes`
     0%{
         opacity: 0; transform: translateX(-100px);
-        filter: blur(15px);
+        filter: blur(5px);
     }
     100%{ 
         opacity: 1; 
@@ -26,23 +26,11 @@ const animation = keyframes`
         filter: blur(0px);
     }
 `
-// const animation = keyframes`
-//     0%{
-//         opacity: 0; transform: translateY(-100px) skewY(10deg) skewX(10deg) rotateZ(30deg);
-//         filter: blur(15px);
-//     }
-//     100%{ 
-//         opacity: 1; 
-//         transform: translateY(0px) ;
-//         filter: blur(0px);
-//     }
-// `
 
 const Section = styled.div`
     // font-family: 'Oswald', sans-serif;
     font-family: 'Playfair Display', serif;
     display:inline-block;
-    // background: linear-gradient(to right, #fc466b, #3f5efb);
     color:white;
     background-color:white;
     -webkit-background-clip: text;
@@ -59,5 +47,4 @@ const Section = styled.div`
     animation-timing-function: cubic-bezier(0.75, 0.82, 0.165, 1);
     animation-delay:0.90s;
     text-align: initial;
-    // animation-iteration-count: infinite;
 `

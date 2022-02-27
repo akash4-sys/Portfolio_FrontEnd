@@ -1,15 +1,16 @@
 .animateUp{
     animation-name:cube;
-    animation-duration:1.8s;
+    animation-duration:1.4s;
+    animation-timing-function:ease-in-out;
     animation-fill-mode:forwards;
 }
 
 @keyframes cube {
     0%{
-        transform: scale(0.9) translateY(-100px) rotateX(22.5deg);
+        transform: scale(0.9) translateY(-50px) rotateX(30deg);
     }
     25%{
-        transform: scale(0.8) translateY(-200px) rotateX(22.5deg);
+        transform: scale(0.8) translateY(-100px) rotateX(60deg);
     }
     50%{
         transform: scale(0.7) translateY(-330px) rotateX(90deg);

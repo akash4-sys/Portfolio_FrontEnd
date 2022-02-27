@@ -1,21 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Home from './Home';
 import Section from './Section';
 import '../component_css/home_section.css'
 
-function rotate() {
-    var element = document.getElementById('inner');
-    element.classList.remove('animateDown');
-    element.classList.add('animateUp');
-}
-
 function HomeSection() {
+    const [backAnimation, setBackAnimation] = useState(0);
+
+    function rotate() {
+        var element = document.getElementById('inner');
+        element.classList.remove('animateDown');
+        element.classList.add('animateUp');
+        console.log(backAnimation);
+        setBackAnimation(1);
+    }
+
     return (
         <Container id="container" className="cube-container">
             <Inner className="inner" id="inner" onWheel={rotate}>
                 <Home className="front" />
-                <Section className="back"/>
+                <Section className="back" startAnimation={backAnimation}/>
             </Inner>
         </Container>
     )

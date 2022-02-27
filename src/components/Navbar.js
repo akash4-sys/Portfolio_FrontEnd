@@ -7,8 +7,9 @@ function Navbar() {
     return (
         <nav className="navbar navbar-expand-lg navbar-dark fixed-top z-index-2 p-0">
             <div className="container-fluid addBlur">
-                <a className="navbar-brand ms-3" href="/">
-                    <UserImg src="/images/icon.gif" />
+                <a className="navbar-brand ms-2 d-flex align-items-center" href="/">
+                    <img src="/images/icon.gif" width='40' height='40' className="rounded-circle mt-1 me-2" alt=".."/>
+                    <ListElement href="/" aria-current="page" className="mt-1 text-decoration-none text-white">Akash Mishra</ListElement>
                 </a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
@@ -72,12 +73,4 @@ const ListElement = styled.a`
         opacity:1;
         transform: scaleY(1);
     }
-`
-
-const UserImg = styled.img`
-    width:48px;
-    height:48px;
-    border-radius:50%;
-    cursor:pointer;
-    margin-top:2px;
 `
