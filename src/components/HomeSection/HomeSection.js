@@ -4,46 +4,18 @@ import Home from './Home';
 import Section from './Section';
 import '../component_css/home_section.css'
 
-//TODO: fix twice the up scroll and down scroll , improve timing if possible
-
-var scrollPos = 0;
-
 function rotate() {
-    if ((document.getElementById('inner').getBoundingClientRect()).top > scrollPos) {
-        console.log('up');
-        document.getElementById('inner').classList.remove('animateUp');
-        document.getElementById('inner').classList.add('animateDown');
-        // document.getElementById('inner').style.transform = "translateY(0px) rotateX(0deg)";
-    }
-    else {
-        console.log('down');
-        document.getElementById('inner').classList.remove('animateDown');
-        document.getElementById('inner').classList.add('animateUp');
-        // document.getElementById('inner').style.transform="scale(0.7) translateY(-100px) rotateX(90deg)";
-    }
-    scrollPos = (document.getElementById('inner').getBoundingClientRect()).top;
+    var element = document.getElementById('inner');
+    element.classList.remove('animateDown');
+    element.classList.add('animateUp');
 }
 
-// function rotate() {
-//     var st = document.documentElement.scrollTop;
-//     if (st > lastScrollTop){
-//         console.log(st);
-//         document.getElementById('inner').style.transform="translateY(0px) rotateX(0deg)"
-//     } else {
-//         console.log(st);
-//         document.getElementById('inner').style.transform="scale(0.8) translateY(-100px) rotateX(90deg)";
-//         // document.getElementById('inner').classList.add('animate');
-//    }
-//    lastScrollTop =( st <= 0 ) ? 0 : st;
-// }
-
 function HomeSection() {
-
     return (
-        <Container id="container" className="cube-container" onWheel={rotate}>
-            <Inner className="inner" id="inner">
+        <Container id="container" className="cube-container">
+            <Inner className="inner" id="inner" onWheel={rotate}>
                 <Home className="front" />
-                <Section className="back" />
+                <Section className="back"/>
             </Inner>
         </Container>
     )

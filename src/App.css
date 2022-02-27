@@ -1,6 +1,7 @@
-/* *::-webkit-scrollbar{
+*::-webkit-scrollbar{
     display: none;
-} */
+    overflow: hidden;
+}
 
 *{
     margin:0px;

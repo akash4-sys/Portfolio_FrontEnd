@@ -6,10 +6,8 @@ import '../component_css/home.css'
 function Home() {
     const [animation, setAnimation] = useState(0);
     function fader() {
-        // let intro = document.getElementById('myintro');
         let left = document.getElementById('left');
         let right = document.getElementById('right');
-        // document.getElementById('userImg').style.transform="scale(0.14) translate(-625vh, -140vw) rotate(360deg)";
         document.getElementById('userImg').classList.add('collapser');
         left.classList.add('leftOpen');
         right.classList.add('rightOpen');
