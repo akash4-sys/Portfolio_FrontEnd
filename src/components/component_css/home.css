@@ -43,3 +43,28 @@
 .addBlur{
     backdrop-filter:blur(10px);
 }
+
+/* textbox css */
+@media only screen and (max-width:992px) {
+    #h1{
+        font-size:7vh !important;
+    }
+    #h3{
+        font-size:4.9vh !important;
+    }
+    #h5{
+        font-size:3.7vh !important;
+    }
+}
+
+@media only screen and (max-width:480px) {
+    #h1{
+        font-size:5.5vh !important;
+    }
+    #h3{
+        font-size:4.5vh !important;
+    }
+    #h5{
+        font-size:3.2vh !important;
+    }
+}

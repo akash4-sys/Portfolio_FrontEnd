@@ -1,14 +1,15 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
+import '../component_css/home.css';
 
 function TextBox(props) {
     const start = props.start;
     return (
         start &&
         <Section>
-            <h1 style={{fontSize:"4vw"}}>My <br /> Protfolio</h1>
-            <h3 style={{fontSize: "2.9vw"}}>Self-Taught C++ Programmer <br /> And <br /> Web Developer</h3>
-            <h5 style={{fontSize: "1.7vw"}}>I like to code and design websites,<br /> and I love what I do.</h5>
+            <h1 id='h1' style={{fontSize:"4vw"}}>My <br /> Protfolio</h1>
+            <h3 id='h3' style={{fontSize: "2.9vw"}}>Self-Taught C++ Programmer <br /> And <br /> Web Developer</h3>
+            <h5 id='h5' style={{fontSize: "1.7vw"}}>I like to code and design websites,<br /> and I love what I do.</h5>
         </Section>
     )
 }

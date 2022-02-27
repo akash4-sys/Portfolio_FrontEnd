@@ -1,15 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
-import './component_css/home.css'
+import './component_css/home.css';
 
 function Navbar() {
-
     return (
         <nav className="navbar navbar-expand-lg navbar-dark fixed-top z-index-2 p-0">
             <div className="container-fluid addBlur">
                 <a className="navbar-brand ms-2 d-flex align-items-center" href="/">
                     <img src="/images/icon.gif" width='40' height='40' className="rounded-circle mt-1 me-2" alt=".."/>
-                    <ListElement href="/" aria-current="page" className="mt-1 text-decoration-none text-white">Akash Mishra</ListElement>
+                    <BrandName href="/" className="mt-2 text-decoration-none text-white">Akash Mishra</BrandName>
                 </a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
@@ -72,5 +71,39 @@ const ListElement = styled.a`
     &:hover::after{
         opacity:1;
         transform: scaleY(1);
+    }
+
+    @media (max-width: 992px) {
+        height: 20vh !important;
+        font-size:2.3vh;
+    }
+`
+
+const BrandName = styled.span`
+    position:relative;
+    letter-spacing:1.15px;
+    
+    &::after{
+        content: "";
+        height: 2px;
+        background-color: white;
+        position:absolute;
+        right:0;
+        left:0;
+        bottom:-2px;
+        opacity:0;
+        transform-origin: left center;
+        transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+        transform: scaleX(0);
+    }
+    
+    &:hover::after{
+        opacity:1;
+        transform: scaleY(1);
+    }
+    
+    @media (max-width: 992px) {
+        font-size:2.7vh;
+        padding-bottom:1vh;
     }
 `

@@ -8,14 +8,15 @@ function Section(props) {
     return (
         <Back >
             <Container id="container">
-               { startAnimation &&
-                <Title>
-                    <div>&nbsp;&nbsp;Not <span>Your</span></div>
-                    <div>&nbsp;&nbsp;&nbsp;Average</div>
-                    <div>&nbsp;&nbsp;Software</div>
-                    <div>&nbsp;&nbsp;Engineer</div>
-                    <SubHeading>Get ready to turn your ideas into reality</SubHeading>
-                </Title>}
+                {   startAnimation &&
+                    <Title>
+                        <div>&nbsp;&nbsp;Not <span>Your</span></div>
+                        <div>&nbsp;&nbsp;&nbsp;Average</div>
+                        <div>&nbsp;&nbsp;Software</div>
+                        <div>&nbsp;&nbsp;Engineer</div>
+                        <SubHeading>Get ready to turn your ideas into reality</SubHeading>
+                    </Title>
+                }
             </Container>
             <MidSection>
                 <Test>Lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis non, laboriosam, laborum suscipit error natus voluptates repellat quasi, perspiciatis dolor voluptate rerum exercitationem voluptatum adipisci? Quam nostrum nihil ut iusto? lorem ipsum Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti error amet ut! Iste dolor iusto tempora aliquid modi. Numquam ex deleniti dolorum aliquam officia provident aliquid delectus ullam eaque modi! lorem conv lorem. Lorem ipsum dolor lorem sit amet consectetur adipisicing elit. Quibusdam voluptate quas ratione amet deleniti distinctio quae repellendus, est similique iste tenetur corrupti sunt. Nam dolores debitis possimus magni libero vel? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita id porro commodi quia, tempora laudantium, quos autem, quam quasi magnam reiciendis ullam. Cupiditate rerum reprehenderit dolores illum esse autem voluptas. Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati quia voluptas ut sint tempora error aperiam earum, molestias vel laboriosam dolor in mollitia harum labore vitae veniam et sapiente culpa?Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, optio eos. Libero rerum adipisci nostrum eius omnis molestiae, natus eaque dolor voluptatem deserunt quidem quod id labore totam, debitis non? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint, ratione velit distinctio ex odit cupiditate ullam. Vitae ducimus corporis aliquid modi neque, aliquam, excepturi nam rerum aspernatur autem corrupti voluptatem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, suscipit magnam! Doloremque enim odio eveniet, repudiandae delectus ex unde itaque sapiente quasi accusantium! Vel laudantium culpa, delectus aperiam quibusdam placeat! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus ipsam illo aut. Voluptates, illum velit sed dicta id harum placeat unde! Voluptate nulla cupiditate modi maxime tempore vel sint quaerat? lorem lorem</Test>
@@ -32,7 +33,6 @@ const Back = styled.div`
     backface-visibility: hidden;
     position:absolute;
     height:100vh;
-    // transform: translateY(-140px) translateZ(-90px) rotateX(-90deg);
     transform:translateY(-698px) translateZ(-420px) translateX(0px) rotateX(-90deg);
 `
 
@@ -92,6 +92,10 @@ const Title = styled.div`
     div:nth-child(5){
         animation-delay:4s;
     }
+
+   @media (max-width:480px){
+       font-size:6.5vh;
+   }
 `
 
 const SubHeading = styled.div`

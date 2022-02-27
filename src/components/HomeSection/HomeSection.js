@@ -11,7 +11,6 @@ function HomeSection() {
         var element = document.getElementById('inner');
         element.classList.remove('animateDown');
         element.classList.add('animateUp');
-        console.log(backAnimation);
         setBackAnimation(1);
     }
 
