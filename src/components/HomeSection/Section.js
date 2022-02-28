@@ -1,14 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
+import Skills from '../Subsection/Skills';
 
 function Section(props) {
-
     const startAnimation = props.startAnimation;
+    const [scrollPosition, setScrollPosition] = useState(0);
+
+    function handleScroll() {
+        const pos = document.getElementById('back').scrollTop;
+        setScrollPosition(pos);
+    }
 
     return (
-        <Back >
-            <Container id="container">
-                {   startAnimation &&
+        <Back id="back" onScroll={handleScroll}>
+            <Container>
+                {startAnimation &&
                     <Title>
                         <div>&nbsp;&nbsp;Not <span>Your</span></div>
                         <div>&nbsp;&nbsp;&nbsp;Average</div>
@@ -18,8 +24,8 @@ function Section(props) {
                     </Title>
                 }
             </Container>
-            <MidSection>
-                <Test>Lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis non, laboriosam, laborum suscipit error natus voluptates repellat quasi, perspiciatis dolor voluptate rerum exercitationem voluptatum adipisci? Quam nostrum nihil ut iusto? lorem ipsum Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti error amet ut! Iste dolor iusto tempora aliquid modi. Numquam ex deleniti dolorum aliquam officia provident aliquid delectus ullam eaque modi! lorem conv lorem. Lorem ipsum dolor lorem sit amet consectetur adipisicing elit. Quibusdam voluptate quas ratione amet deleniti distinctio quae repellendus, est similique iste tenetur corrupti sunt. Nam dolores debitis possimus magni libero vel? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita id porro commodi quia, tempora laudantium, quos autem, quam quasi magnam reiciendis ullam. Cupiditate rerum reprehenderit dolores illum esse autem voluptas. Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati quia voluptas ut sint tempora error aperiam earum, molestias vel laboriosam dolor in mollitia harum labore vitae veniam et sapiente culpa?Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, optio eos. Libero rerum adipisci nostrum eius omnis molestiae, natus eaque dolor voluptatem deserunt quidem quod id labore totam, debitis non? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint, ratione velit distinctio ex odit cupiditate ullam. Vitae ducimus corporis aliquid modi neque, aliquam, excepturi nam rerum aspernatur autem corrupti voluptatem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, suscipit magnam! Doloremque enim odio eveniet, repudiandae delectus ex unde itaque sapiente quasi accusantium! Vel laudantium culpa, delectus aperiam quibusdam placeat! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus ipsam illo aut. Voluptates, illum velit sed dicta id harum placeat unde! Voluptate nulla cupiditate modi maxime tempore vel sint quaerat? lorem lorem</Test>
+            <MidSection className="mt-5">
+                <Skills scrollPos={scrollPosition}/>
             </MidSection>
         </Back>
     )
@@ -104,9 +110,5 @@ const SubHeading = styled.div`
     font-family: 'Oswald', sans-serif;
 `
 const MidSection = styled.div`
-    color:black;
-`
-
-const Test = styled.div`
-    display:block;
+   overflow:scroll;
 `

@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import './component_css/home.css';
+import { DarkNavContext } from './DarkNavContext';
 
 function Navbar() {
+    const [context, setContext] = useContext(DarkNavContext);
+    
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark fixed-top z-index-2 p-0">
+        <nav className={`navbar navbar-expand-lg navbar-dark fixed-top z-index-2 p-0 ${context}`}>
             <div className="container-fluid addBlur">
                 <a className="navbar-brand ms-2 d-flex align-items-center" href="/">
                     <img src="/images/icon.gif" width='40' height='40' className="rounded-circle mt-1 me-2" alt=".."/>
@@ -74,7 +77,7 @@ const ListElement = styled.a`
     }
 
     @media (max-width: 992px) {
-        height: 20vh !important;
+        margin-bottom: 13vh !important;
         font-size:2.3vh;
     }
 `

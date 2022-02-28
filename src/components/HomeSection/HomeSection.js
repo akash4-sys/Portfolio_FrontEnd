@@ -32,7 +32,6 @@ const Container = styled.div`
     background-color:white;
     perspective: 3200px;
     overflow:hidden;
-    // scroll-snap-type: y mandatory;
 `
 
 const Inner = styled.div`
