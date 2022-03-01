@@ -4,11 +4,11 @@ import Skills from '../Subsection/Skills';
 
 function Section(props) {
     const startAnimation = props.startAnimation;
-    const [scrollPosition, setScrollPosition] = useState(0);
+    const [Scroll_Top, setScrollTop] = useState(0);
 
     function handleScroll() {
-        const pos = document.getElementById('back').scrollTop;
-        setScrollPosition(pos);
+        const BACK = document.getElementById('back');
+        setScrollTop(BACK.scrollTop);
     }
 
     return (
@@ -25,7 +25,7 @@ function Section(props) {
                 }
             </Container>
             <MidSection className="mt-5">
-                <Skills scrollPos={scrollPosition}/>
+                <Skills ScrollTop={Scroll_Top}/>
             </MidSection>
         </Back>
     )
