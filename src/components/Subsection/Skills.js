@@ -1,10 +1,12 @@
 import React, { useEffect, useContext } from 'react';
+import { useNavigate } from 'react-router';
 import styled from 'styled-components';
 import { DarkNavContext } from '../DarkNavContext';
 import './Skills.css'
 
 function Skills(props) {
     const [context, setContext] = useContext(DarkNavContext);
+    let navigate = useNavigate();
 
     useEffect(() => {
         let ScrollTop = (props.ScrollTop);
@@ -16,6 +18,24 @@ function Skills(props) {
         } else {
             setContext("bg-transparent");
         }
+
+        var downArrow = document.getElementsByClassName('downarrow');
+        (props.ScrollTop > props.EndOfPage - 500 ) ? downArrow[0].classList.add("visible") : downArrow[0].classList.remove("visible");
+        (props.ScrollTop > props.EndOfPage - 400 ) ? downArrow[1].classList.add("visible") : downArrow[1].classList.remove("visible");
+        (props.ScrollTop > props.EndOfPage - 300 ) ? downArrow[2].classList.add("visible") : downArrow[2].classList.remove("visible");
+        (props.ScrollTop > props.EndOfPage - 200 ) ? downArrow[3].classList.add("visible") : downArrow[3].classList.remove("visible");
+        (props.ScrollTop > props.EndOfPage - 100 ) ? downArrow[4].classList.add("visible") : downArrow[4].classList.remove("visible");
+        if(props.ScrollTop > props.EndOfPage ){
+            downArrow[5].classList.add("visible");
+            setTimeout(() => navigate('/myprojects'), 750);
+        }else{
+            downArrow[5].classList.remove("visible");
+        }
+
+        // console.log(props.EndOfPage)
+        // if (props.ScrollTop > props.EndOfPage) {
+        //     setTimeout(() => navigate('/myprojects'), 1500);
+        // }
 
     }, [props.ScrollTop]);
 
@@ -65,11 +85,21 @@ function Skills(props) {
                             <img className="ms-2" src="https://img.icons8.com/color/48/000000/firebase.png" alt="firebase" />
                         </div>
                         <div>OAuth Services
-
                         </div>
                         <div>SendGrid</div>
                     </div>
                 </SkillList>
+            </Box>
+            <Box>
+                <Messages>Scroll Down to check my Projects</Messages>
+                <NextPageLoader>
+                    <i className="fa-solid fa-caret-down downarrow"></i>
+                    <i className="fa-solid fa-caret-down downarrow"></i>
+                    <i className="fa-solid fa-caret-down downarrow"></i>
+                    <i className="fa-solid fa-caret-down downarrow"></i>
+                    <i className="fa-solid fa-caret-down downarrow"></i>
+                    <i className="fa-solid fa-caret-down downarrow"></i>
+                </NextPageLoader>
             </Box>
         </Container>
     )
@@ -78,7 +108,7 @@ function Skills(props) {
 export default Skills;
 
 const Container = styled.div`
-    color:black;
+    // margin-bottom:35vh !important;
 `
 
 const Box = styled.div`
@@ -123,6 +153,7 @@ const Tech = styled(SkillsTitle)`
     font-size:6vw;
     left:0px;
     right:-100%;
+    font-weight:800;
     transform: translateX(calc(300px - var(--scrollPos)));
     
     @media (max-width:992px){
@@ -158,4 +189,44 @@ const SkillList = styled.div`
             width:20px;
         }
     }
+`
+
+const Messages = styled(SkillsTitle)`
+    font-size:5vw;
+    top: 250vh;
+    left: -100%;
+    font-weight:900;
+`
+
+const NextPageLoader = styled.div`
+   display:flex;
+   flex-direction:column;
+   font-size:10vw;
+
+   i{
+       height: 9vh;
+       opacity:0;
+   }
+
+   i:nth-child(0){
+        color:#7CB9E8;
+    }
+    i:nth-child(1){
+       color:#F0F8FF;
+   }
+   i:nth-child(2){
+        color:#89CFF0;
+   }
+   i:nth-child(3){
+        color:#6CB4EE;
+   }
+   i:nth-child(4){
+        color:#72A0C1;
+   }
+   i:nth-child(5){
+        color:#0066b2;
+   }
+   i:nth-child(6){
+        color:#0039a6;
+   }
 `

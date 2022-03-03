@@ -5,10 +5,17 @@ import Skills from '../Subsection/Skills';
 function Section(props) {
     const startAnimation = props.startAnimation;
     const [Scroll_Top, setScrollTop] = useState(0);
+    const [End_Of_Page, setEnd_Of_Page] = useState(0);
 
     function handleScroll() {
         const BACK = document.getElementById('back');
         setScrollTop(BACK.scrollTop);
+
+        var rs = getComputedStyle(BACK);
+        var End_of_page = rs.getPropertyValue('--endofpage');
+        setEnd_Of_Page(End_of_page);
+
+        console.log(BACK.scrollTop)
     }
 
     return (
@@ -25,7 +32,7 @@ function Section(props) {
                 }
             </Container>
             <MidSection className="mt-5">
-                <Skills ScrollTop={Scroll_Top}/>
+                <Skills ScrollTop={Scroll_Top} EndOfPage={End_Of_Page}/>
             </MidSection>
         </Back>
     )
@@ -40,6 +47,12 @@ const Back = styled.div`
     position:absolute;
     height:100vh;
     transform:translateY(-698px) translateZ(-420px) translateX(0px) rotateX(-90deg);
+
+    // TODO: MAKE IT RESPONSIVE
+    --endofpage: 1870;
+    @media (max-width: 480px){
+        --endofpage:1200;
+    }
 `
 
 const Container = styled.div`

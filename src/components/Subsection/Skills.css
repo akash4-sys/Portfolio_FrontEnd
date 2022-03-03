@@ -1,3 +1,22 @@
 :root{
     --scrollPos: 0px;
 }
+
+.visible{
+    animation-name:downarrowappear;
+    animation-duration:2s;
+    animation-timing-function:ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes downarrowappear{
+    0%{
+        opacity: 0;
+        scale: 0.93;
+    }
+
+    100%{
+        opacity: 1;
+        scale: 1;
+    }
+}
