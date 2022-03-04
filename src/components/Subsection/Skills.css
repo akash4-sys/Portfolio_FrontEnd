@@ -4,7 +4,7 @@
 
 .visible{
     animation-name:downarrowappear;
-    animation-duration:2s;
+    animation-duration:250ms;
     animation-timing-function:ease;
     animation-fill-mode: forwards;
 }

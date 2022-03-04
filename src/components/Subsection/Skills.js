@@ -9,33 +9,29 @@ function Skills(props) {
     let navigate = useNavigate();
 
     useEffect(() => {
-        let ScrollTop = (props.ScrollTop);
+        let ScrollTop = props.ScrollTop;
+        let EndOfPage = props.EndOfPage;
         var root = document.querySelector(':root');
         root.style.setProperty('--scrollPos', `${ScrollTop}px`);
 
-        if (props.ScrollTop >= 650) {
+        if (ScrollTop >= props.ColorPos) {
             setContext("bg-dark");
         } else {
             setContext("bg-transparent");
         }
 
         var downArrow = document.getElementsByClassName('downarrow');
-        (props.ScrollTop > props.EndOfPage - 500 ) ? downArrow[0].classList.add("visible") : downArrow[0].classList.remove("visible");
-        (props.ScrollTop > props.EndOfPage - 400 ) ? downArrow[1].classList.add("visible") : downArrow[1].classList.remove("visible");
-        (props.ScrollTop > props.EndOfPage - 300 ) ? downArrow[2].classList.add("visible") : downArrow[2].classList.remove("visible");
-        (props.ScrollTop > props.EndOfPage - 200 ) ? downArrow[3].classList.add("visible") : downArrow[3].classList.remove("visible");
-        (props.ScrollTop > props.EndOfPage - 100 ) ? downArrow[4].classList.add("visible") : downArrow[4].classList.remove("visible");
-        if(props.ScrollTop > props.EndOfPage ){
+        (ScrollTop > EndOfPage - 500 ) ? downArrow[0].classList.add("visible") : downArrow[0].classList.remove("visible");
+        (ScrollTop > EndOfPage - 400 ) ? downArrow[1].classList.add("visible") : downArrow[1].classList.remove("visible");
+        (ScrollTop > EndOfPage - 300 ) ? downArrow[2].classList.add("visible") : downArrow[2].classList.remove("visible");
+        (ScrollTop > EndOfPage - 200 ) ? downArrow[3].classList.add("visible") : downArrow[3].classList.remove("visible");
+        (ScrollTop > EndOfPage - 100 ) ? downArrow[4].classList.add("visible") : downArrow[4].classList.remove("visible");
+        if(ScrollTop > EndOfPage ){
             downArrow[5].classList.add("visible");
             setTimeout(() => navigate('/myprojects'), 750);
         }else{
             downArrow[5].classList.remove("visible");
         }
-
-        // console.log(props.EndOfPage)
-        // if (props.ScrollTop > props.EndOfPage) {
-        //     setTimeout(() => navigate('/myprojects'), 1500);
-        // }
 
     }, [props.ScrollTop]);
 
@@ -107,9 +103,7 @@ function Skills(props) {
 
 export default Skills;
 
-const Container = styled.div`
-    // margin-bottom:35vh !important;
-`
+const Container = styled.div``
 
 const Box = styled.div`
     height:70vh;
@@ -146,6 +140,11 @@ const SkillsTitle = styled.div`
     @media (max-width: 480px){
         transform: translateX(calc(var(--scrollPos) - 70vw));
     }
+
+    @media (min-width: 1500px){
+        top:110vh;
+        transform: translateX(calc(var(--scrollPos) + 20vw));
+    }
 `;
 
 const Tech = styled(SkillsTitle)`
@@ -181,6 +180,10 @@ const SkillList = styled.div`
 
     @media (max-width: 480px){
         font-size:2.5vh !important;
+    }
+
+    @media (min-width:1500px) {
+        font-size:5vh !important;
     }
 
     img{

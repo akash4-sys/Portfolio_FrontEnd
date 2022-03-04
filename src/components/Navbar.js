@@ -10,7 +10,7 @@ function Navbar() {
         <nav className={`navbar navbar-expand-lg navbar-dark fixed-top z-index-2 p-0 ${context}`}>
             <div className="container-fluid addBlur">
                 <a className="navbar-brand ms-2 d-flex align-items-center" href="/">
-                    <img src="/images/icon.gif" width='40' height='40' className="rounded-circle mt-1 me-2" alt=".."/>
+                    <BrandImage src="/images/icon.gif" width='40' height='40' className="rounded-circle mt-1 me-2" alt=".."/>
                     <BrandName href="/" className="mt-2 text-decoration-none text-white">Akash Mishra</BrandName>
                 </a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -80,6 +80,11 @@ const ListElement = styled.a`
         margin-bottom: 13vh !important;
         font-size:2.3vh;
     }
+
+    @media (min-width:1920px) {
+        font-size:2.5vh;
+        margin-bottom:5px;
+    }
 `
 
 const BrandName = styled.span`
@@ -108,5 +113,17 @@ const BrandName = styled.span`
     @media (max-width: 992px) {
         font-size:2.7vh;
         padding-bottom:1vh;
+    }
+
+    @media (min-width:1500px) {
+        font-size:2.65vh;
+    }
+`
+
+const BrandImage = styled.img`
+    @media (min-width:1920px) {
+        margin-top:10px;
+        width:50px;
+        height:50px;
     }
 `

@@ -6,6 +6,7 @@ function Section(props) {
     const startAnimation = props.startAnimation;
     const [Scroll_Top, setScrollTop] = useState(0);
     const [End_Of_Page, setEnd_Of_Page] = useState(0);
+    const [NavColorPos, setNavColorPos] = useState(1);
 
     function handleScroll() {
         const BACK = document.getElementById('back');
@@ -15,12 +16,15 @@ function Section(props) {
         var End_of_page = rs.getPropertyValue('--endofpage');
         setEnd_Of_Page(End_of_page);
 
+        var NavColor = rs.getPropertyValue('--changecolor');
+        setNavColorPos(NavColor);
+
         console.log(BACK.scrollTop)
     }
 
     return (
         <Back id="back" onScroll={handleScroll}>
-            <Container>
+            <Container id="container">
                 {startAnimation &&
                     <Title>
                         <div>&nbsp;&nbsp;Not <span>Your</span></div>
@@ -32,7 +36,7 @@ function Section(props) {
                 }
             </Container>
             <MidSection className="mt-5">
-                <Skills ScrollTop={Scroll_Top} EndOfPage={End_Of_Page}/>
+                <Skills ScrollTop={Scroll_Top} EndOfPage={End_Of_Page} ColorPos={NavColorPos}/>
             </MidSection>
         </Back>
     )
@@ -48,11 +52,32 @@ const Back = styled.div`
     height:100vh;
     transform:translateY(-698px) translateZ(-420px) translateX(0px) rotateX(-90deg);
 
-    // TODO: MAKE IT RESPONSIVE
-    --endofpage: 1870;
+    --changecolor: 650;
+    @media (min-width:2000px) {
+        --changecolor:1100;
+    }
+
+    @media (max-width:800px) {
+        --changecolor:900;
+    }
+
+    --endofpage: 1770;
+    @media (min-width:1600px) {
+        --endofpage:2900;
+    }
+
+    @media (max-width:1500px) {
+        --endofpage:1550;
+    }
+
+    @media (max-width:992px) {
+        --endofpage:1400;
+    }
+
     @media (max-width: 480px){
         --endofpage:1200;
     }
+    
 `
 
 const Container = styled.div`
@@ -122,6 +147,4 @@ const SubHeading = styled.div`
     font-size:3vh;
     font-family: 'Oswald', sans-serif;
 `
-const MidSection = styled.div`
-   overflow:scroll;
-`
+const MidSection = styled.div``
