@@ -115,7 +115,7 @@ const BrandName = styled.span`
         padding-bottom:1vh;
     }
 
-    @media (min-width:1500px) {
+    @media (min-width:1920px) {
         font-size:2.65vh;
     }
 `

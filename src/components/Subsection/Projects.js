@@ -5,63 +5,140 @@ import { DarkNavContext } from '../DarkNavContext';
 function Projects() {
 
     const [context, setContext] = useContext(DarkNavContext);
-    useEffect(()=>{
+    useEffect(() => {
         setContext('bg-transparent');
     })
 
     return (
-        <Mega className="p-5">
-            <Container className="container">
-                {/* <div className="row"> */}
-                <ProjectImage className="rounded-3  bg-dark">
-                    {/* <ProjectImage src="images/main.jpg" /> */}
-                </ProjectImage>
-                <Col className="text-success text-end my-4">
-                    <Title>
-                        <div className="fs-5">Featured Project</div>
-                        <ProjectTitle className="fs-1">Animezone</ProjectTitle>
-                    </Title>
-                    <ProjectDescription className="text-white bg-dark p-3 rounded">
-                        A minimal, dark blue theme for VS Code,
-                        Sublime Text, Atom, iTerm, and more. Available on
-                        Visual Studio Marketplace, Package Control, Atom
-                        Package Manager, and npm.
-                    </ProjectDescription>
-                    <div className="text-secondary">
-                        Node.js &nbsp;&nbsp; GoogleAuth &nbsp;&nbsp; Express &nbsp;&nbsp; Heroku &nbsp;&nbsp; CRUD
-                    </div>
-                    <ProjectLink href="/" id="ProjectLink"><i className="fa-brands fa-github"></i></ProjectLink>
-                    &nbsp;&nbsp;&nbsp;&nbsp;
-                    <ProjectLink href="/"><i className="fa-solid fa-up-right-from-square"></i></ProjectLink>
-                </Col>
-                {/* </div> */}
-            </Container>
-        </Mega>
+        <Container className="p-5">
+            <CenterContainer className="container">
+                <PageTitle className="fs-1 fw-bold my-5 ms-2">Some Things I've Built</PageTitle>
+                <Grid>
+
+                    <ProjectImage className="rounded-3" />
+                    <LeftCol className="text-success text-end my-4">
+                        <Title>
+                            <div className="fs-5">Featured Project</div>
+                            <ProjectTitle className="fs-1">Animezone</ProjectTitle>
+                        </Title>
+                        <RightProjectDescription className="text-white p-3 rounded shadow">
+                            A minimal, dark blue theme for VS Code,
+                            Sublime Text, Atom, iTerm, and more. Available on
+                            Visual Studio Marketplace, Package Control, Atom
+                            Package Manager, and npm.
+                        </RightProjectDescription>
+                        <Tech>
+                            Node.js &nbsp;&nbsp; GoogleAuth &nbsp;&nbsp; Express &nbsp;&nbsp; Heroku &nbsp;&nbsp; CRUD
+                        </Tech>
+                        <ProjectLink href="/" id="ProjectLink"><i className="fa-brands fa-github"></i></ProjectLink>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <ProjectLink href="/"><i className="fa-solid fa-up-right-from-square"></i></ProjectLink>
+                    </LeftCol>
+
+                    <RightCol className="text-success text-start my-4">
+                        <Title>
+                            <div className="fs-5">Featured Project</div>
+                            <ProjectTitle className="fs-1">Animezone</ProjectTitle>
+                        </Title>
+                        <LeftProjectDescription className="text-white p-3 rounded shadow">
+                            A minimal, dark blue theme for VS Code,
+                            Sublime Text, Atom, iTerm, and more. Available on
+                            Visual Studio Marketplace, Package Control, Atom
+                            Package Manager, and npm.
+                        </LeftProjectDescription>
+                        <Tech>
+                            Node.js &nbsp;&nbsp; GoogleAuth &nbsp;&nbsp; Express &nbsp;&nbsp; Heroku &nbsp;&nbsp; CRUD
+                        </Tech>
+                        <ProjectLink href="/" id="ProjectLink"><i className="fa-brands fa-github"></i></ProjectLink>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <ProjectLink href="/"><i className="fa-solid fa-up-right-from-square"></i></ProjectLink>
+                    </RightCol>
+                    <LeftProjectImage className="rounded-3" />
+
+                    <ProjectImage2 className="rounded-3" />
+                    <LeftCol className="text-success text-end my-4">
+                        <Title>
+                            <div className="fs-5">Featured Project</div>
+                            <ProjectTitle className="fs-1">Animezone</ProjectTitle>
+                        </Title>
+                        <RightProjectDescription className="text-white p-3 rounded shadow">
+                            A minimal, dark blue theme for VS Code,
+                            Sublime Text, Atom, iTerm, and more. Available on
+                            Visual Studio Marketplace, Package Control, Atom
+                            Package Manager, and npm.
+                        </RightProjectDescription>
+                        <Tech>
+                            Node.js &nbsp;&nbsp; GoogleAuth &nbsp;&nbsp; Express &nbsp;&nbsp; Heroku &nbsp;&nbsp; CRUD
+                        </Tech>
+                        <ProjectLink href="/" id="ProjectLink"><i className="fa-brands fa-github"></i></ProjectLink>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <ProjectLink href="/"><i className="fa-solid fa-up-right-from-square"></i></ProjectLink>
+                    </LeftCol>
+                    
+                </Grid>
+            </CenterContainer>
+        </Container>
     )
 }
 
 export default Projects;
 
-const Mega = styled.div`
-    background: url('images/bg.png') center center;
-    background-size:cover;
-    // z-index-1;
+const Container = styled.section`
+    background-color:#0a192f;
+    height:100%;
 `
 
-const Container = styled.div`
+const CenterContainer = styled.div``
+
+const Grid = styled.div`
     display:grid;
-    grid-template: repeat(2, [col] 1fr);
-    grid-gap:20px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows:auto;
+    row-gap:5rem;
+`
+
+const LeftCol = styled.div`
+    grid-column: 2/2;
+`
+
+const RightCol = styled.div`
+    grid-column: 1/3;   //column start / column end
+    grid-row: 2/4;
+    z-index:2;
 `
 
 const ProjectImage = styled.div`
-    background: url('images/main.jpg') center center;
+    background: url('images/coding2.jpg') center center;
     background-size: cover;
     background-repeat: no-repeat;
     // height:45vh;
     content:"";
-    grid-column:col 1 / span 2;
-    grid-row:1;
+`
+
+const ProjectImage2 = styled(ProjectImage)`
+    grid-row:4;
+`
+
+const LeftProjectImage= styled(ProjectImage)`
+    background: url('images/laptop.jpg') center center;
+    grid-column: 2/4;
+    grid-row: 2/4;
+`
+
+const PageTitle = styled.div`
+    color:#ccd6f6;
+    display:flex;
+    align-items:center;
+
+    &::after{
+        content: "";
+        display: block;
+        width: 300px;
+        height: 1px;
+        margin-left: 20px;
+        margin-top:4px;
+        background-color: #4e4e4e;
+    }
 `
 
 const Title = styled.div`
@@ -70,24 +147,26 @@ const Title = styled.div`
 
 const ProjectTitle = styled.div`
     font-family:"Calibre","Inter","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
-    color:#696969;
+    color:#ccd6f6;
 `
 
-const Col = styled.div`
-    grid-column: col 2/span 2;
-    grid-row:1;
-    z-index:100;
+const Tech = styled.div`
+    color:#ccd6f6;
 `
-
-const ProjectDescription = styled.div`
-    background-color:#112240;
+const RightProjectDescription = styled.div`
+    background-color:#29636d;
     font-family: 'Montserrat', sans-serif;
-    margin-left:43%;
+    margin-left:-13%;
+`
+
+const LeftProjectDescription = styled(RightProjectDescription)`
+    margin-left:0px;
+    width:57%;
 `
 
 const ProjectLink = styled.a`
     text-decoration: none;
-    color:#696969;
+    color:#ccd6f6;
 
     &:hover{
         color:green !important;
