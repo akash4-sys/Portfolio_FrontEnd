@@ -1,0 +1,25 @@
+@keyframes fadeIn {
+    from{
+        opacity:0;
+        transform: translateY(30px);
+        filter: blur(1px);
+    }
+    to{
+        opacity:1;
+        transform: translateY(0px);
+        filter: blur(0px);
+    }
+}
+
+.firstProject{
+    animation: 0.8s ease-in forwards fadeIn;
+}
+
+.ProjectAnimation{
+    animation: 0.8s ease-in forwards fadeIn;
+}
+
+.RevealProjectTitle {
+    opacity:0;
+    animation: 0.60s ease-in forwards fadeIn;
+}
