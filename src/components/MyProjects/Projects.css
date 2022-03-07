@@ -1,0 +1,43 @@
+@keyframes fadeIn {
+    from{
+        opacity:0;
+        transform: translateY(30px);
+        filter: blur(1px);
+    }
+    to{
+        opacity:1;
+        transform: translateY(0px);
+        filter: blur(0px);
+    }
+}
+
+.firstProject{
+    animation: 0.8s ease-in forwards fadeIn;
+}
+
+.ProjectAnimation{
+    animation: 0.8s ease-in forwards fadeIn;
+}
+
+.RevealProjectTitle {
+    opacity:0;
+    animation: 0.60s ease-in forwards fadeIn;
+}
+
+@media only screen and (max-width: 768px) {
+    .firstProject{
+        background:url('../../../public/images/coding2.jpg') center center no-repeat;
+        background-size:cover;
+        border-radius: 5px;
+        box-shadow: inset 0 0 0 1000px #0d203499;
+        border: 0.2px solid;
+    }
+
+    .thirdProject{
+        background:url('../../../public/images/icon_image.png') center center no-repeat;
+        background-size:cover;
+        border-radius: 5px;
+        box-shadow: inset 0 0 0 1000px #0d203499;
+        border: 0.2px solid;
+    }
+}

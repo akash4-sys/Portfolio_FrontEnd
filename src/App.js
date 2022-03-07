@@ -4,7 +4,7 @@ import Navbar from './components/Navbar';
 import HomeSection from './components/HomeSection/HomeSection';
 import { DarkNavContext } from './components/DarkNavContext';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Projects from './components/Subsection/Projects';
+import Projects from './components/MyProjects/Projects';
 
 function App() {
 	const [context, setContext] = useState("bg-transparent");
