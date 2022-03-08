@@ -29,7 +29,7 @@ function Navbar() {
                             </ListElement>
                         </li>
                         <li className="nav-item mx-3 d-flex align-items-center justify-content-center">
-                            <ListElement className="nav-link active" href="/">
+                            <ListElement className="nav-link active" href="https://github.com/akash4-sys" target="_blank">
                                 <i className="fa-brands fa-github text-white me-1"></i>GITHUB
                             </ListElement>
                         </li>
@@ -39,7 +39,7 @@ function Navbar() {
                             </ListElement>
                         </li>
                         <li className="nav-item mx-3 d-flex align-items-center justify-content-center">
-                            <ListElement className="nav-link active" href="/">
+                            <ListElement className="nav-link active" href="https://www.linkedin.com/in/akash-mishra-242964230/" target="_blank">
                                 <i className="fa-brands fa-linkedin text-white me-1"></i>LINKEDIN
                             </ListElement>
                         </li>

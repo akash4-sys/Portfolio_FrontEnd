@@ -18,8 +18,6 @@ function Section(props) {
 
         var NavColor = rs.getPropertyValue('--changecolor');
         setNavColorPos(NavColor);
-
-        console.log(BACK.scrollTop)
     }
 
     return (

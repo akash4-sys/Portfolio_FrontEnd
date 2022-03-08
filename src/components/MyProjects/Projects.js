@@ -1,4 +1,5 @@
 import React, { useEffect, useContext } from 'react';
+import { useNavigate } from 'react-router';
 import styled from 'styled-components';
 import { DarkNavContext } from '../DarkNavContext';
 import './Projects.css'
@@ -9,6 +10,9 @@ function Projects() {
     useEffect(() => {
         setContext('bg-transparent');
     });
+
+    // let navigate_a = useNavigate();
+    // function navigate1() { navio }
 
     function handleScroll() {
 
@@ -93,7 +97,8 @@ function Projects() {
                 </div>
 
                 <ProjectFolder>
-                    <FolderItems className="content">
+                    {/* window.location.href to open in same page */}
+                    <FolderItems className="content" onClick={() => (window.open('https://github.com/akash4-sys/Disney-clone'))}>
                         <Header className="m-4 d-flex align-items-center justify-content-between">
                             <i className="fa-solid fa-folder fa-2x"></i>
                             <div>
@@ -110,7 +115,7 @@ function Projects() {
                             Firebase &nbsp;&nbsp; React &nbsp;&nbsp; Redux
                         </Tech>
                     </FolderItems>
-                    <FolderItems className="content">
+                    <FolderItems className="content" onClick={() => (window.open('https://github.com/akash4-sys/Vanilla-JS-GAME'))}>
                         <Header className="m-4 d-flex align-items-center justify-content-between">
                             <i className="fa-solid fa-folder fa-2x"></i>
                             <div>
@@ -119,15 +124,15 @@ function Projects() {
                                 <ProjectLink href="/"><i className="fa-solid fa-up-right-from-square"></i></ProjectLink>
                             </div>
                         </Header>
-                        <span className="fs-3 fw-bold mx-4">Disney Clone</span>
+                        <span className="fs-3 fw-bold mx-4">Brick Breaker</span>
                         <ProjectDescription className="mx-4 mb-4">
-                            Building a responsive Disney clone with react, redux toolkit, firebase authentication and firebase database.
+                            A Simple 2D game using Vanilla Javascript and html canvas.
                         </ProjectDescription>
                         <Tech className="mx-4 mb-4 text-secondary">
-                            Firebase &nbsp;&nbsp; React &nbsp;&nbsp; Redux
+                            Javascript
                         </Tech>
                     </FolderItems>
-                    <FolderItems className="content">
+                    <FolderItems className="content" onClick={() => (window.open('https://github.com/akash4-sys/MERN-Stack-Tutorial-1'))}>
                         <Header className="m-4 d-flex align-items-center justify-content-between">
                             <i className="fa-solid fa-folder fa-2x"></i>
                             <div>
@@ -136,9 +141,9 @@ function Projects() {
                                 <ProjectLink href="/"><i className="fa-solid fa-up-right-from-square"></i></ProjectLink>
                             </div>
                         </Header>
-                        <span className="fs-3 fw-bold mx-4">Disney Clone</span>
+                        <span className="fs-3 fw-bold mx-4">Todo-List Application</span>
                         <ProjectDescription className="mx-4 mb-4">
-                            Building a responsive Disney clone with react, redux toolkit, firebase authentication and firebase database.
+                            A Tutorial MERN Stack CRUD Application for reading, writing and saving notes with a simple interface.
                         </ProjectDescription>
                         <Tech className="mx-4 mb-4 text-secondary">
                             Firebase &nbsp;&nbsp; React &nbsp;&nbsp; Redux
@@ -354,7 +359,7 @@ const ProjectTitle = styled.a`
     cursor:pointer;
     
     &:hover{
-        color:#198754;
+        color:#58e2c4;
     }
 
     @media (min-width: 1920px){
@@ -479,12 +484,10 @@ const FolderItems = styled.div`
     opacity:0;
     box-shadow:rgb(0 0 0 / 69%) 0px 26px 30px -10px, rgb(0 0 0 / 73%) 0px 16px 10px -10px;
     cursor:pointer;
-    transition: all 250ms ease-in;
-
-    // TODO: TRANSFORM NOT WORKING SEEMS LIKE SOME KIND OF BUG
+    transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
 
     &:hover{
-        transform:scale(2.5);
+        transform:scale(1.05) !important;
         box-shadow: rgba(0 0 0 / 80%) 0px 40px 58px -16px, rgb(0 0 0 / 72%) 0px 30px 22px -10px;
         border-color:rgba(249, 249, 249, 0.8);
         span{
