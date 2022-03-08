@@ -11,7 +11,7 @@ function Projects() {
     });
 
     function handleScroll() {
-        
+
         var reveals = document.querySelectorAll('.content');
 
         for (var i = 0; i < reveals.length; i++) {
@@ -19,9 +19,9 @@ function Projects() {
             var elementTop = reveals[i].getBoundingClientRect().top;
             var elementVisible = 50;
             if (elementTop < windowHeight - elementVisible) {
-              reveals[i].classList.add("ProjectAnimation");
-            } 
-          }
+                reveals[i].classList.add("ProjectAnimation");
+            }
+        }
     }
 
     return (
@@ -31,28 +31,28 @@ function Projects() {
                 <Grid>
 
                     <ProjectImage className="rounded-3 firstProject" />
-                    <LeftCol className="text-success text-end my-5 firstProject">
+                    <LeftCol className="text-end my-5 firstProject">
                         <Title>
                             <FeaturedProject className="fs-5">Featured Project</FeaturedProject>
                             <ProjectTitle href="/" className="fs-1">Animezone</ProjectTitle>
                         </Title>
-                        <RightProjectDescription className="text-white p-3 rounded shadow">
+                        <RightProjectDescription className="text-white p-3 rounded shadow-lg">
                             A mongodb and nodejs based website where you can read manga, watch anime and even write your own manga and publish it for community.
                         </RightProjectDescription>
                         <Tech>
-                            Node.js &nbsp;&nbsp; Express &nbsp;&nbsp; Heroku &nbsp;&nbsp; CRUD &nbsp;&nbsp; SendGrid &nbsp;&nbsp; MongoDB
+                            Node.js &nbsp;&nbsp; Express &nbsp;&nbsp; Heroku &nbsp;&nbsp; CRUD &nbsp;&nbsp; SendGrid &nbsp;&nbsp; MongoDB &nbsp;&nbsp; GoogleAuth
                         </Tech>
                         <ProjectLink href="/" id="ProjectLink"><i className="fa-brands fa-github"></i></ProjectLink>
                         &nbsp;&nbsp;&nbsp;&nbsp;
                         <ProjectLink href="/"><i className="fa-solid fa-up-right-from-square"></i></ProjectLink>
                     </LeftCol>
 
-                    <RightCol className="text-success text-start my-5 content">
+                    <RightCol className="text-start my-5 content">
                         <Title>
                             <FeaturedProject className="fs-5">Featured Project</FeaturedProject>
                             <ProjectTitle href="/" className="fs-1">UltraChat</ProjectTitle>
                         </Title>
-                        <LeftProjectDescription className="text-white p-3 rounded shadow">
+                        <LeftProjectDescription className="text-white p-3 rounded shadow-lg">
                             A MERN stack based chat application with Stream and Twilio. Download or send media, text, GIF, emoji's in Real time.
                             Create your account to join the community!
                         </LeftProjectDescription>
@@ -66,12 +66,12 @@ function Projects() {
                     <LeftProjectImage className="rounded-3 content" />
 
                     <ProjectImage2 className="rounded-3 content" />
-                    <LeftCol className="text-success text-end my-5 content thirdProject">
+                    <LeftCol className="text-end my-5 content thirdProject">
                         <Title>
                             <FeaturedProject className="fs-5">Featured Project</FeaturedProject>
                             <ProjectTitle href="/" className="fs-1">Runner</ProjectTitle>
                         </Title>
-                        <RightProjectDescription className="text-white p-3 rounded shadow">
+                        <RightProjectDescription className="text-white p-3 rounded shadow-lg">
                             A minimal, game developed in Vanilla Javascript just for your browser. Play the game,
                             create your own levels and enjoy and beat people in leaderboard score.
                         </RightProjectDescription>
@@ -82,8 +82,133 @@ function Projects() {
                         &nbsp;&nbsp;&nbsp;&nbsp;
                         <ProjectLink href="/"><i className="fa-solid fa-up-right-from-square"></i></ProjectLink>
                     </LeftCol>
-                    
+
                 </Grid>
+
+                <SecondTitle className="fs-1 text-center content fw-bold">Other Noteworthy Projects</SecondTitle>
+                <div className="d-flex justify-content-center text-center pb-5">
+                    <Archive className="content">
+                        <a href="/" className="fs-5">checkout the archive</a>
+                    </Archive>
+                </div>
+
+                <ProjectFolder>
+                    <FolderItems className="content">
+                        <Header className="m-4 d-flex align-items-center justify-content-between">
+                            <i className="fa-solid fa-folder fa-2x"></i>
+                            <div>
+                                <ProjectLink href="/" id="ProjectLink"><i className="fa-brands fa-github"></i></ProjectLink>
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                <ProjectLink href="/"><i className="fa-solid fa-up-right-from-square"></i></ProjectLink>
+                            </div>
+                        </Header>
+                        <span className="fs-3 fw-bold mx-4">Disney Clone</span>
+                        <ProjectDescription className="mx-4 mb-4">
+                            Building a responsive Disney clone with react, redux toolkit, firebase authentication and firebase database.
+                        </ProjectDescription>
+                        <Tech className="mx-4 mb-4 text-secondary">
+                            Firebase &nbsp;&nbsp; React &nbsp;&nbsp; Redux
+                        </Tech>
+                    </FolderItems>
+                    <FolderItems className="content">
+                        <Header className="m-4 d-flex align-items-center justify-content-between">
+                            <i className="fa-solid fa-folder fa-2x"></i>
+                            <div>
+                                <ProjectLink href="/" id="ProjectLink"><i className="fa-brands fa-github"></i></ProjectLink>
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                <ProjectLink href="/"><i className="fa-solid fa-up-right-from-square"></i></ProjectLink>
+                            </div>
+                        </Header>
+                        <span className="fs-3 fw-bold mx-4">Disney Clone</span>
+                        <ProjectDescription className="mx-4 mb-4">
+                            Building a responsive Disney clone with react, redux toolkit, firebase authentication and firebase database.
+                        </ProjectDescription>
+                        <Tech className="mx-4 mb-4 text-secondary">
+                            Firebase &nbsp;&nbsp; React &nbsp;&nbsp; Redux
+                        </Tech>
+                    </FolderItems>
+                    <FolderItems className="content">
+                        <Header className="m-4 d-flex align-items-center justify-content-between">
+                            <i className="fa-solid fa-folder fa-2x"></i>
+                            <div>
+                                <ProjectLink href="/" id="ProjectLink"><i className="fa-brands fa-github"></i></ProjectLink>
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                <ProjectLink href="/"><i className="fa-solid fa-up-right-from-square"></i></ProjectLink>
+                            </div>
+                        </Header>
+                        <span className="fs-3 fw-bold mx-4">Disney Clone</span>
+                        <ProjectDescription className="mx-4 mb-4">
+                            Building a responsive Disney clone with react, redux toolkit, firebase authentication and firebase database.
+                        </ProjectDescription>
+                        <Tech className="mx-4 mb-4 text-secondary">
+                            Firebase &nbsp;&nbsp; React &nbsp;&nbsp; Redux
+                        </Tech>
+                    </FolderItems>
+                    <FolderItems className="content">
+                        <Header className="m-4 d-flex align-items-center justify-content-between">
+                            <i className="fa-solid fa-folder fa-2x"></i>
+                            <div>
+                                <ProjectLink href="/" id="ProjectLink"><i className="fa-brands fa-github"></i></ProjectLink>
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                <ProjectLink href="/"><i className="fa-solid fa-up-right-from-square"></i></ProjectLink>
+                            </div>
+                        </Header>
+                        <span className="fs-3 fw-bold mx-4">Disney Clone</span>
+                        <ProjectDescription className="mx-4 mb-4">
+                            Building a responsive Disney clone with react, redux toolkit, firebase authentication and firebase database.
+                        </ProjectDescription>
+                        <Tech className="mx-4 mb-4 text-secondary">
+                            Firebase &nbsp;&nbsp; React &nbsp;&nbsp; Redux
+                        </Tech>
+                    </FolderItems>
+                    <FolderItems className="content">
+                        <Header className="m-4 d-flex align-items-center justify-content-between">
+                            <i className="fa-solid fa-folder fa-2x"></i>
+                            <div>
+                                <ProjectLink href="/" id="ProjectLink"><i className="fa-brands fa-github"></i></ProjectLink>
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                <ProjectLink href="/"><i className="fa-solid fa-up-right-from-square"></i></ProjectLink>
+                            </div>
+                        </Header>
+                        <span className="fs-3 fw-bold mx-4">Disney Clone</span>
+                        <ProjectDescription className="mx-4 mb-4">
+                            Building a responsive Disney clone with react, redux toolkit, firebase authentication and firebase database.
+                        </ProjectDescription>
+                        <Tech className="mx-4 mb-4 text-secondary">
+                            Firebase &nbsp;&nbsp; React &nbsp;&nbsp; Redux
+                        </Tech>
+                    </FolderItems>
+                    <FolderItems className="content">
+                        <Header className="m-4 d-flex align-items-center justify-content-between">
+                            <i className="fa-solid fa-folder fa-2x"></i>
+                            <div>
+                                <ProjectLink href="/" id="ProjectLink"><i className="fa-brands fa-github"></i></ProjectLink>
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                <ProjectLink href="/"><i className="fa-solid fa-up-right-from-square"></i></ProjectLink>
+                            </div>
+                        </Header>
+                        <span className="fs-3 fw-bold mx-4">Disney Clone</span>
+                        <ProjectDescription className="mx-4 mb-4">
+                            Building a responsive Disney clone with react, redux toolkit, firebase authentication and firebase database.
+                        </ProjectDescription>
+                        <Tech className="mx-4 mb-4 text-secondary">
+                            Firebase &nbsp;&nbsp; React &nbsp;&nbsp; Redux
+                        </Tech>
+                    </FolderItems>
+                </ProjectFolder>
+
+                <ThirdTitle className="text-center content fw-bold">Get In Touch</ThirdTitle>
+                <div className="d-flex justify-content-center text-center pb-5">
+                    <ContactMe className="w-50 content">
+                        Currently I am a student in his 3rd year of Computer Science Engineering
+                        with 5 months of experience as a web developer and I am looking for new opportunities.
+                        If you want to contact me my inbox is always open.
+                    </ContactMe>
+                </div>
+                <div className="d-flex justify-content-center pb-5 gap-3">
+                    <EmailMe className="content" href="/">Email Me</EmailMe>
+                    <InbuiltChat className="content" href="/">Say Hello</InbuiltChat>
+                </div>
             </CenterContainer>
         </Container>
     )
@@ -94,6 +219,7 @@ export default Projects;
 const Container = styled.section`
     background-color:#0a192f;
     height:100%;
+    overflow-x:hidden;
 `
 
 const CenterContainer = styled.div`
@@ -117,6 +243,7 @@ const LeftCol = styled.div`
     grid-column: 2/2;
     animation-delay:1.2s;
     opacity:0;
+    color:#58e2c4;
 
     @media (max-width:768px) {
         padding:10%;
@@ -135,6 +262,7 @@ const RightCol = styled.div`
     z-index:2;
     animation-delay:1.2s;
     opacity:0;
+    color:#58e2c4;
 
     @media (max-width:768px) {
         padding:3% 8%;
@@ -165,7 +293,7 @@ const ProjectImage2 = styled(ProjectImage)`
     opacity:0;
 `
 
-const LeftProjectImage= styled(ProjectImage)`
+const LeftProjectImage = styled(ProjectImage)`
     background: url('images/laptop.jpg') center center;
     grid-column: 2/4;
     grid-row: 2/4;
@@ -174,7 +302,7 @@ const LeftProjectImage= styled(ProjectImage)`
 
     @media (max-width: 768px) {
         box-shadow: inset 0 0 0 1000px #0a192f98;
-        border: 0.2px solid green;
+        border: 0.2px solid #58e2c4;
         display:inherit;
     }
 `
@@ -274,11 +402,123 @@ const ProjectLink = styled.a`
     color:#ccd6f6;
 
     &:hover{
-        color:green !important;
+        color:#58e2c4 !important;
         cursor:pointer !important;
     }
 
     @media (min-width: 1920px) {
         font-size: 1vw !important;
     }
+`
+
+const SecondTitle = styled.div`
+    color:#ccd6f6;
+    animation-delay: 0.5s;
+    opacity:0;
+    margin-top:35vh;
+    margin-bottom:2vh;
+`
+
+const Archive = styled.div`
+    opacity:0;
+    animation-delay: 0.8s;
+    width:fit-content;
+    a{
+        text-decoration:none;
+        color:#58e2c4;
+    }
+
+    a::after{
+        content: "";
+        height: 2px;
+        background-color:#58e2c4;
+        position:absolute;
+        right:0;
+        left:0;
+        bottom:-2px;
+        opacity:0;
+        transform-origin: left center;
+        transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+        transform: scaleX(0);
+    }
+
+    a:hover::after{
+        opacity:1;
+        transform: scaleY(1);
+    }
+`
+
+const ProjectFolder = styled.div`
+    display:grid;
+    grid-gap:2vw;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    color:#ccd6f6;
+
+    @media (max-width:768px) {
+        grid-template-columns:1fr;
+    }
+
+    div:nth-child(1){ animation-delay:0.5s; }
+    div:nth-child(2){ animation-delay:0.6s; }
+    div:nth-child(3){ animation-delay:0.7s; }
+    div:nth-child(4){ animation-delay:0.5s; }
+    div:nth-child(5){ animation-delay:0.6s; }
+    div:nth-child(6){ animation-delay:0.7s; }
+`
+
+const FolderItems = styled.div`
+    // min-width:20vw;
+    border-radius:4px;
+    background-color:#112240;
+    opacity:0;
+    box-shadow:rgb(0 0 0 / 69%) 0px 26px 30px -10px, rgb(0 0 0 / 73%) 0px 16px 10px -10px;
+    cursor:pointer;
+    transition: all 250ms ease-in;
+
+    // TODO: TRANSFORM NOT WORKING SEEMS LIKE SOME KIND OF BUG
+
+    &:hover{
+        transform:scale(2.5);
+        box-shadow: rgba(0 0 0 / 80%) 0px 40px 58px -16px, rgb(0 0 0 / 72%) 0px 30px 22px -10px;
+        border-color:rgba(249, 249, 249, 0.8);
+        span{
+            color:#58e2c4;
+        }
+    }
+`
+
+const Header = styled.div`
+    color:#58e2c4;
+`
+
+const ProjectDescription = styled.div``
+
+const ThirdTitle = styled(SecondTitle)`
+    font-size:4vw;
+    animation-delay:0.5s;
+`
+
+const ContactMe = styled.div`
+    color:#ccd6f6;
+    opacity:0;
+    animation-delay:250ms;
+`
+
+const EmailMe = styled.a`
+    color:#58e2c4;
+    border:0.5px solid #58e2c4;
+    padding: 2% 3%;
+    border-radius: 4px;
+    text-decoration:none;
+    opacity:0;
+    animation-delay:250ms;
+
+    &:hover{
+        background-color:#58e2c430;
+        color:#58e2c4;
+    }
+`
+
+const InbuiltChat = styled(EmailMe)`
+    animation-delay:500ms;
 `

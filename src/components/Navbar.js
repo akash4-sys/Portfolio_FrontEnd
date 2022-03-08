@@ -35,7 +35,7 @@ function Navbar() {
                         </li>
                         <li className="nav-item mx-3 d-flex align-items-center justify-content-center">
                             <ListElement className="nav-link active" href="/myprojects">
-                                <i className="fa-solid fa-file text-white me-1"></i>MYPROJECTS
+                                <i className="fa-solid fa-folder text-white me-1"></i>MYPROJECTS
                             </ListElement>
                         </li>
                         <li className="nav-item mx-3 d-flex align-items-center justify-content-center">
