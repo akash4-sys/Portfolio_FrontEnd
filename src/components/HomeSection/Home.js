@@ -85,13 +85,12 @@ const UserImg = styled.img`
     width:30%;
     cursor:pointer;
     z-index:10;
-    transition:all .8s cubic-bezier(0.645, 0.045, 0.355, 1),
-                transform .3s cubic-bezier(0.455, 0.03, 0.515, 0.955),
-                box-shadow .3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    transition: all 500ms ease-in-out;
     &:hover{
         box-shadow:0 0 0 0 rgba(#000, 0.5);
         padding:3%;
         width:34%;
+        background-color:#58e2c4;
     }
 
     &:active{

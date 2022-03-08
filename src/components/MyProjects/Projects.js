@@ -417,6 +417,10 @@ const SecondTitle = styled.div`
     opacity:0;
     margin-top:35vh;
     margin-bottom:2vh;
+
+    @media (min-width: 1920px){
+        font-size: 3vw !important;
+    }
 `
 
 const Archive = styled.div`
@@ -426,6 +430,9 @@ const Archive = styled.div`
     a{
         text-decoration:none;
         color:#58e2c4;
+        @media (min-width: 1920px){
+            font-size: 1.25vw !important;
+        }
     }
 
     a::after{
@@ -467,7 +474,6 @@ const ProjectFolder = styled.div`
 `
 
 const FolderItems = styled.div`
-    // min-width:20vw;
     border-radius:4px;
     background-color:#112240;
     opacity:0;
@@ -485,13 +491,27 @@ const FolderItems = styled.div`
             color:#58e2c4;
         }
     }
+
+    span{
+        @media (min-width: 1920px){
+            font-size: 2vw !important;
+        }
+    }
 `
 
 const Header = styled.div`
     color:#58e2c4;
+
+    @media (min-width: 1920px){
+        font-size: 1vw !important;
+    }
 `
 
-const ProjectDescription = styled.div``
+const ProjectDescription = styled.div`
+    @media (min-width: 1920px){
+        font-size: 1vw !important;
+    }
+`
 
 const ThirdTitle = styled(SecondTitle)`
     font-size:4vw;
@@ -502,6 +522,10 @@ const ContactMe = styled.div`
     color:#ccd6f6;
     opacity:0;
     animation-delay:250ms;
+
+    @media (min-width: 1920px){
+        font-size: 1vw !important;
+    }
 `
 
 const EmailMe = styled.a`
@@ -516,6 +540,10 @@ const EmailMe = styled.a`
     &:hover{
         background-color:#58e2c430;
         color:#58e2c4;
+    }
+
+    @media (min-width: 1920px){
+        font-size: 1vw !important;
     }
 `
 
