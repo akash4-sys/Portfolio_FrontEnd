@@ -44,6 +44,7 @@ export default Section;
 
 const Back = styled.div`
     overflow-y:scroll;
+    overflow-x:hidden;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     position:absolute;

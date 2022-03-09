@@ -1,5 +1,4 @@
 import React, { useEffect, useContext } from 'react';
-import { useNavigate } from 'react-router';
 import styled from 'styled-components';
 import { DarkNavContext } from '../DarkNavContext';
 import './Projects.css'

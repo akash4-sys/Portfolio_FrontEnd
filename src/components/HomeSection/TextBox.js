@@ -29,7 +29,6 @@ const animation = keyframes`
 `
 
 const Section = styled.div`
-    // font-family: 'Oswald', sans-serif;
     font-family: 'Playfair Display', serif;
     display:inline-block;
     color:white;
