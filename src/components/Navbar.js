@@ -11,7 +11,7 @@ function Navbar() {
             <div className="container-fluid addBlur">
                 <a className="navbar-brand ms-2 d-flex align-items-center" href="/">
                     <BrandImage src="/images/icon.gif" width='40' height='40' className="rounded-circle mt-1 me-2" alt=".."/>
-                    <BrandName href="/" className="mt-2 text-decoration-none text-white">Akash Mishra</BrandName>
+                    <BrandName href="/contactme" className="mt-2 text-decoration-none text-white">Akash Mishra</BrandName>
                 </a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
@@ -84,6 +84,7 @@ const ListElement = styled.a`
     @media (min-width:1920px) {
         font-size:2.5vh;
         margin-bottom:5px;
+        letter-spacing:4px;
     }
 `
 
@@ -117,6 +118,7 @@ const BrandName = styled.span`
 
     @media (min-width:1920px) {
         font-size:2.65vh;
+        letter-spacing:4px;
     }
 `
 

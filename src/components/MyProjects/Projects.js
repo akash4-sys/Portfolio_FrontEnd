@@ -10,9 +10,6 @@ function Projects() {
         setContext('bg-transparent');
     });
 
-    // let navigate_a = useNavigate();
-    // function navigate1() { navio }
-
     function handleScroll() {
 
         var reveals = document.querySelectorAll('.content');
@@ -148,7 +145,7 @@ function Projects() {
                             Firebase &nbsp;&nbsp; React &nbsp;&nbsp; Redux
                         </Tech>
                     </FolderItems>
-                    <FolderItems className="content">
+                    {/* <FolderItems className="content">
                         <Header className="m-4 d-flex align-items-center justify-content-between">
                             <i className="fa-solid fa-folder fa-2x"></i>
                             <div>
@@ -198,7 +195,7 @@ function Projects() {
                         <Tech className="mx-4 mb-4 text-secondary">
                             Firebase &nbsp;&nbsp; React &nbsp;&nbsp; Redux
                         </Tech>
-                    </FolderItems>
+                    </FolderItems> */}
                 </ProjectFolder>
 
                 <ThirdTitle className="text-center content fw-bold">Get In Touch</ThirdTitle>
@@ -210,8 +207,8 @@ function Projects() {
                     </ContactMe>
                 </div>
                 <div className="d-flex justify-content-center pb-5 gap-3">
-                    <EmailMe className="content" href="/">Email Me</EmailMe>
-                    <InbuiltChat className="content" href="/">Say Hello</InbuiltChat>
+                    <EmailMe className="content" href="mailto:mishraakashmishra19@gmail.com">Email Me</EmailMe>
+                    <InbuiltChat className="content" href="/contactme">Say Hello</InbuiltChat>
                 </div>
             </CenterContainer>
         </Container>
