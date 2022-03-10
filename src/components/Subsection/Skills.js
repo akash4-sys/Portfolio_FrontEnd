@@ -5,6 +5,8 @@ import { DarkNavContext } from '../DarkNavContext';
 import './Skills.css'
 
 function Skills(props) {
+
+    // eslint-disable-next-line
     const [context, setContext] = useContext(DarkNavContext);
     let navigate = useNavigate();
 

@@ -4,6 +4,7 @@ import { DarkNavContext } from './DarkNavContext';
 
 function ContactMe() {
 
+    // eslint-disable-next-line
     const [context, setContext] = useContext(DarkNavContext);
     useEffect(() => {
         setContext('bg-dark');

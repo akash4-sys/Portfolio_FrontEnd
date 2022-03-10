@@ -5,6 +5,7 @@ import './Projects.css'
 
 function Projects() {
 
+    // eslint-disable-next-line
     const [context, setContext] = useContext(DarkNavContext);
     useEffect(() => {
         setContext('bg-transparent');
