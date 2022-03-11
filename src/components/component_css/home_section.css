@@ -16,7 +16,7 @@
         transform: scale(0.7) translateY(-330px) rotateX(90deg);
     }
     100%{
-        transform: scale(1.02) translateY(-421px) rotateX(90deg);
+        transform: scale(1.05) translateY(-421px) rotateX(90deg) ;
         transition: ease-in-out transform;
     }
 }

@@ -50,7 +50,7 @@ const Container = styled.main`
     display:flex;
     
     &:before{
-        background: url("images/main.jpg") center center;
+        background: url("images/main.png") center center;
         background-size: cover;
         background-repeat: no-repeat;
         background-position:fixed;    
@@ -61,6 +61,12 @@ const Container = styled.main`
         right:0;
         bottom: 0;
         z-index: -1;
+
+        @media (max-width:480px) {
+            background: url("images/mobile_bg.png") center center;
+            background-size: cover;
+            box-shadow: inset 0 0 0 1000px #0a192f30;
+        }
     }
 `
 

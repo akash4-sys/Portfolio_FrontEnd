@@ -8,25 +8,29 @@ function Projects() {
     // eslint-disable-next-line
     const [context, setContext] = useContext(DarkNavContext);
     useEffect(() => {
+
+        const onScroll = () => {
+            var reveals = document.querySelectorAll('.content');
+
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 50;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("ProjectAnimation");
+                }
+            }
+        };
+
+        window.addEventListener("scroll", onScroll);
         setContext('bg-transparent');
+
+        return () => window.removeEventListener("scroll", onScroll);
+        
     });
 
-    function handleScroll() {
-
-        var reveals = document.querySelectorAll('.content');
-
-        for (var i = 0; i < reveals.length; i++) {
-            var windowHeight = window.innerHeight;
-            var elementTop = reveals[i].getBoundingClientRect().top;
-            var elementVisible = 50;
-            if (elementTop < windowHeight - elementVisible) {
-                reveals[i].classList.add("ProjectAnimation");
-            }
-        }
-    }
-
     return (
-        <Container className="p-5" onWheel={handleScroll} id="container">
+        <Container className="p-5">
             <CenterContainer className="container">
                 <PageTitle className="fs-1 fw-bold my-5 ms-2 RevealProjectTitle">Some Things I've Built</PageTitle>
                 <Grid>
@@ -104,7 +108,7 @@ function Projects() {
                                 <ProjectLink href="/"><i className="fa-solid fa-up-right-from-square"></i></ProjectLink>
                             </div>
                         </Header>
-                        <span className="fs-3 fw-bold mx-4">Disney Clone</span>
+                        <span className="fs-3 fw-bold mx-4 mb-2">Disney Clone</span>
                         <ProjectDescription className="mx-4 mb-4">
                             Building a responsive Disney clone with react, redux toolkit, firebase authentication and firebase database.
                         </ProjectDescription>
@@ -121,7 +125,7 @@ function Projects() {
                                 <ProjectLink href="/"><i className="fa-solid fa-up-right-from-square"></i></ProjectLink>
                             </div>
                         </Header>
-                        <span className="fs-3 fw-bold mx-4">Brick Breaker</span>
+                        <span className="fs-3 fw-bold mx-4 mb-2">Brick Breaker</span>
                         <ProjectDescription className="mx-4 mb-4">
                             A Simple 2D game using Vanilla Javascript and html canvas.
                         </ProjectDescription>
@@ -138,7 +142,7 @@ function Projects() {
                                 <ProjectLink href="/"><i className="fa-solid fa-up-right-from-square"></i></ProjectLink>
                             </div>
                         </Header>
-                        <span className="fs-3 fw-bold mx-4">Todo-List Application</span>
+                        <span className="fs-3 fw-bold mx-4 mb-2">Todo-List Application</span>
                         <ProjectDescription className="mx-4 mb-4">
                             A Tutorial MERN Stack CRUD Application for reading, writing and saving notes with a simple interface.
                         </ProjectDescription>
@@ -155,7 +159,7 @@ function Projects() {
                                 <ProjectLink href="/"><i className="fa-solid fa-up-right-from-square"></i></ProjectLink>
                             </div>
                         </Header>
-                        <span className="fs-3 fw-bold mx-4">Disney Clone</span>
+                        <span className="fs-3 fw-bold mx-4 mb-2">Disney Clone</span>
                         <ProjectDescription className="mx-4 mb-4">
                             Building a responsive Disney clone with react, redux toolkit, firebase authentication and firebase database.
                         </ProjectDescription>
@@ -172,7 +176,7 @@ function Projects() {
                                 <ProjectLink href="/"><i className="fa-solid fa-up-right-from-square"></i></ProjectLink>
                             </div>
                         </Header>
-                        <span className="fs-3 fw-bold mx-4">Disney Clone</span>
+                        <span className="fs-3 fw-bold mx-4 mb-2">Disney Clone</span>
                         <ProjectDescription className="mx-4 mb-4">
                             Building a responsive Disney clone with react, redux toolkit, firebase authentication and firebase database.
                         </ProjectDescription>
@@ -189,7 +193,7 @@ function Projects() {
                                 <ProjectLink href="/"><i className="fa-solid fa-up-right-from-square"></i></ProjectLink>
                             </div>
                         </Header>
-                        <span className="fs-3 fw-bold mx-4">Disney Clone</span>
+                        <span className="fs-3 fw-bold mx-4 mb-2">Disney Clone</span>
                         <ProjectDescription className="mx-4 mb-4">
                             Building a responsive Disney clone with react, redux toolkit, firebase authentication and firebase database.
                         </ProjectDescription>
@@ -329,14 +333,23 @@ const PageTitle = styled.div`
         margin-top:4px;
         background-color: #4e4e4e;
 
+        @media (max-width:768px) {
+            width:10vw;
+        }
+
         @media (max-width:480px) {
             width:4vw;
             margin-left:10px;
+        }
+
+        @media (max-width:400px) {
+           width:0vw; 
         }
     }
 
     @media (max-width:480px) {
         font-size: 6vw !important;
+        margin-bottom:10px !important;
     }
 
     @media (min-width: 1920px){
@@ -493,6 +506,7 @@ const FolderItems = styled.div`
     }
 
     span{
+        display:block;
         @media (min-width: 1920px){
             font-size: 2vw !important;
         }
@@ -516,6 +530,14 @@ const ProjectDescription = styled.div`
 const ThirdTitle = styled(SecondTitle)`
     font-size:4vw;
     animation-delay:0.5s;
+
+    @media (max-width: 768px) {
+        font-size:7vw;
+    }
+
+    @media (max-width:480px) {
+        font-size:9vw;
+    }
 `
 
 const ContactMe = styled.div`
@@ -544,6 +566,15 @@ const EmailMe = styled.a`
 
     @media (min-width: 1920px){
         font-size: 1vw !important;
+    }
+
+    @media (max-width:768px){
+        font-size:3vw;
+    }
+
+    @media (max-width:480px) {
+        font-size:5vw;
+        padding:3% 5%;
     }
 `
 

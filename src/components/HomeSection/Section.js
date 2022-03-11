@@ -24,11 +24,11 @@ function Section(props) {
         <Back id="back" onScroll={handleScroll}>
             <Container id="container">
                 {startAnimation &&
-                    <Title>
-                        <div>&nbsp;&nbsp;Not <span>Your</span></div>
-                        <div>&nbsp;&nbsp;&nbsp;Average</div>
-                        <div>&nbsp;&nbsp;Software</div>
-                        <div>&nbsp;&nbsp;Engineer</div>
+                    <Title className="container">
+                        <div>&nbsp;Not <span>Your</span></div>
+                        <div>&nbsp;Average</div>
+                        <div>&nbsp;Software</div>
+                        <div>&nbsp;Engineer</div>
                         <SubHeading>Get ready to turn your ideas into reality</SubHeading>
                     </Title>
                 }
@@ -44,7 +44,7 @@ export default Section;
 
 const Back = styled.div`
     overflow-y:scroll;
-    overflow-x:hidden;
+    overflow-x:hidden !important;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     position:absolute;
@@ -60,6 +60,10 @@ const Back = styled.div`
         --changecolor:900;
     }
 
+    @media (max-width:480px) {
+        --changecolor: 650;
+    }
+
     --endofpage: 1770;
     @media (min-width:1600px) {
         --endofpage:2900;
@@ -70,7 +74,7 @@ const Back = styled.div`
     }
 
     @media (max-width:992px) {
-        --endofpage:1400;
+        --endofpage:1200;
     }
 
     @media (max-width: 480px){
@@ -88,6 +92,10 @@ const Container = styled.div`
     display:flex;
     justify-content:center;
     align-items:center;
+
+    @media(max-width:480px) {
+        width:100vw;
+    }
 `
 
 const revealTitle = keyframes`
@@ -138,6 +146,8 @@ const Title = styled.div`
 
    @media (max-width:480px){
        font-size:6.5vh;
+    //   margin-left:20px;
+    //   margin-right:20px;
    }
 `
 
