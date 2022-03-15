@@ -1,3 +1,8 @@
+/* navbar css */
+.addBlur{
+    backdrop-filter:blur(10px);
+}
+
 .left{
     clip-path:polygon(0 0, 0% 100%, 100% 100%);
     background-color:#0a192f;
@@ -9,17 +14,24 @@
 }
 
 .leftOpen{
+    background: linear-gradient(43turn, #56CCF2, #9198e5);
     clip-path: polygon(0 0, 0 100%, 0 100%);
 }
 
 .rightOpen{
+    background: linear-gradient(43turn, #56CCF2, #9198e5);
     clip-path: polygon(100% 0, 100% 0, 100% 100%);
 }
 
-/* home css */
+.selfdestruct{
+    width:0px;
+    height:0px;
+}
+
+
 .collapser {
 	animation-name: fadeOutAnimation;
-    animation-duration: 1.5s;
+    animation-duration: 500ms;
     animation-fill-mode:forwards;
 }
 
@@ -27,7 +39,8 @@
     0%{
         opacity: 1;
         transform-style: preserve-3d;
-        perspective: 500px;
+        perspective: 250ms;
+        transform:scale(1);
     }
     
     100%{
@@ -35,36 +48,21 @@
         transform-style: preserve-3d;
         perspective: 500px;
         z-index: 1;
-        transform:translate(-195%, -100%) scale(0.01) rotate(360deg);
+        transform:scale(0) rotate(360deg);
+        /* transform:translate(-195%, -100%) scale(0.01) rotate(360deg); */
     }
 }
 
-/* navbar css */
-.addBlur{
-    backdrop-filter:blur(10px);
-}
-
-/* textbox css */
-@media only screen and (max-width:992px) {
-    #h1{
-        font-size:7vh !important;
+@keyframes screenappear {
+    0%{
+        transform:scale(0.8);
     }
-    #h3{
-        font-size:4.9vh !important;
-    }
-    #h5{
-        font-size:3.7vh !important;
+    100%{
+        transform:scale(1);
     }
 }
 
-@media only screen and (max-width:480px) {
-    #h1{
-        font-size:5.5vh !important;
-    }
-    #h3{
-        font-size:4.5vh !important;
-    }
-    #h5{
-        font-size:3.2vh !important;
-    }
+.mainscreen{
+    animation: screenappear 500ms ease-in forwards;
+    animation-delay: 500ms;
 }

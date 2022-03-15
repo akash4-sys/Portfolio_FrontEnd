@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 function Resume() {
     return (
@@ -70,9 +70,19 @@ const Container = styled.div`
     }
 `
 
+const ResumeAnimation = keyframes`
+    0%{
+        transform:scale(0);
+    }
+    100%{
+        transform:scale(1);
+    }
+`
+
 const ResumeImage = styled.img`
     width:100%;
     height:100%;
+    animation: ${ResumeAnimation} 500ms ease-in forwards;
 `
 
 const Accounts = styled.div`
@@ -136,6 +146,17 @@ const Mobile = styled.span`
     @media (max-width: 480px) { opacity: 1; width:auto; }
 `
 
+
+const LinkAnimations = keyframes`
+    0%{
+        transform:translateX(-900px);
+    }
+    100%{
+        transform:translateX(0px);
+    }
+`
+
 const PdfLink = styled(Anchor)`
+    animation: ${LinkAnimations} 500ms ease-in;
     @media (max-width: 480px) { opacity: 0; width:0px}
 `

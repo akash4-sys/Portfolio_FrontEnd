@@ -27,7 +27,7 @@ function Projects() {
 
         return () => window.removeEventListener("scroll", onScroll);
         
-    });
+    }, []);
 
     return (
         <Container className="p-5">

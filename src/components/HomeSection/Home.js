@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import TextBox from './TextBox';
+import SkillGlobe from './SkillGlobe';
 import '../component_css/home.css'
 
+// TODO: make it responsive for 980px
+
 function Home() {
+
     const [animation, setAnimation] = useState(0);
+
     function fader() {
         let left = document.getElementById('left');
         let right = document.getElementById('right');
@@ -13,18 +18,25 @@ function Home() {
         right.classList.add('rightOpen');
         window.scrollTo(0, 0);
         setAnimation(1);
+        
+        setInterval(() => {
+            document.getElementById('myintro').classList.add('selfdestruct');
+        }, 1500);
+
+        document.getElementById('mainscreen').classList.add('mainscreen');
     };
 
     return (
         <>
             <Front>
-                <Container id="container" >
+                <Container id="mainscreen">
                     <TextBox start={animation}/>
+                    <SkillGlobe />
                 </Container>
                 <MyIntro id="myintro">
                     <Triangle id="left" className="left"/>
                     <Triangle id="right" className="right"/>
-                    <UserImg src="images/icon.gif" className="shadow-lg" id="userImg" onClick={fader}/>
+                    <UserImg src="images/icon.gif" className="shadow-lg mainbackground" id="userImg" onClick={fader}/>
                 </MyIntro>
             </Front>
         </>
@@ -48,9 +60,11 @@ const Container = styled.main`
     position:relative;
     overflow:hidden;
     display:flex;
+    transform:scale(0);
+    align-items:center;
     
     &:before{
-        background: url("images/main.png") center center;
+        background: url("images/bg.png") center center;
         background-size: cover;
         background-repeat: no-repeat;
         background-position:fixed;    
@@ -61,12 +75,6 @@ const Container = styled.main`
         right:0;
         bottom: 0;
         z-index: -1;
-
-        @media (max-width:480px) {
-            background: url("images/mobile_bg.png") center center;
-            background-size: cover;
-            box-shadow: inset 0 0 0 1000px #0a192f30;
-        }
     }
 `
 
@@ -102,6 +110,14 @@ const UserImg = styled.img`
     &:active{
         padding:1%;
         width:28%;
+    }
+
+    @media (max-width:768px){
+        width:48%;
+
+        &:active{
+            width:44%;
+        }
     }
 `
 

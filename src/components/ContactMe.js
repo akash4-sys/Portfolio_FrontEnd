@@ -8,7 +8,7 @@ function ContactMe() {
     const [context, setContext] = useContext(DarkNavContext);
     useEffect(() => {
         setContext('bg-dark');
-    })
+    }, [])
 
     return (
         <Page className="d-flex align-items-center justify-content-center container">
