@@ -66,7 +66,7 @@ const Container = styled.div`
     height:100%;
     background-color:white;
     perspective: 3200px;
-    overflow=x:hidden;
+    overflow-x:hidden;
     overflow-y:scroll !important;
 `
 

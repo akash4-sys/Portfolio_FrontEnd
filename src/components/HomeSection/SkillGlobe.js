@@ -10,7 +10,7 @@ function SkillGlobe() {
 
     const texts = [
         'Html', 'JavaScript',
-        'CSS3', 'SQL', 'Interactive',
+        'CSS3', 'MYSQL', 'Interactive',
         'Responsive', 'Redux', 'React',
         'C++', 'OpenCV', 'FireBase', 'Stream', 'OAuth',
         'MongoDB', 'ExpressJS', 'Node.JS', 'Git', 'GitHub', 'SendGrid', 'npm', 'JSON'
@@ -64,6 +64,7 @@ const Container = styled.div`
 
     @media (min-width:1920px) { --radiusOfSphere:500; }
     @media (max-width:1200px) { --radiusOfSphere:230; }
+    @media (max-width:992px) { --radiusOfSphere:210; }
     @media (max-width:768px) { --radiusOfSphere:180; }
     @media (max-width: 480px) { 
         width:0px;
@@ -87,14 +88,18 @@ const Content = styled.div`
         transition:250ms;
     }
 
-    @media (max-width: 768px) {
-        width:100%;
-        height:370px;
-    }
-
     @media (max-width:1200px) { 
         width:87%;
         height:400px;
+    }
+
+    @media (max-width: 992px) { 
+        width:110%;
+    }
+
+    @media (max-width: 768px) {
+        width:100%;
+        height:370px;
     }
 
     @media (min-width:1920px) {

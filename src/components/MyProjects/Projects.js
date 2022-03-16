@@ -226,6 +226,11 @@ const Container = styled.section`
     background-color:#0a192f;
     height:100%;
     overflow-x:hidden;
+
+    @media (max-width: 480px){
+        padding-left:0.4rem !important;
+        padding-right:0.4rem !important;
+    }
 `
 
 const CenterContainer = styled.div`

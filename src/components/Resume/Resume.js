@@ -6,8 +6,7 @@ function Resume() {
         <Page>
             <Left>
                 <Accounts className="d-flex align-items-center">
-                    <BrandAnchor href="https://www.linkedin.com/in/akash-mishra-242964230/" target="_blank"><i className="fa-brands fa-linkedin"></i></BrandAnchor>
-                    <BrandAnchor href="https://github.com/akash4-sys" target="_blank"><i className="fa-brands fa-github"></i></BrandAnchor>
+                    <Anchor href="/mycertificates">My&nbsp;&nbsp;Certificates</Anchor>
                     <Line></Line>
                 </Accounts>
             </Left>
@@ -51,10 +50,7 @@ const Left = styled.div`
     @media (max-width: 480px) { width: 5%; }
 `
 
-const Right = styled.div`
-    width:20%;
-    @media (max-width: 480px) { width: 5%; }
-`
+const Right = styled(Left)``
 
 const Container = styled.div`
     width:60%;
@@ -88,9 +84,9 @@ const ResumeImage = styled.img`
 const Accounts = styled.div`
     gap:25px;
     position: fixed;
-    top: 76%;
+    top: 72%;
     left: 10%;
-    flex-direction:column;
+    writing-mode: vertical-rl;
 
     @media (max-width:480px) { opacity:0; width: 0px; height: 0px};
 `
@@ -126,17 +122,12 @@ const Line = styled.div`
     margin-right: 5px;
 `
 
-const Email = styled.div`
-    color:white;
-    position: fixed;
+const Email = styled(Accounts)`
     top: 55%;
     right: 10%;
-    writing-mode: vertical-rl;
+    left:auto;
     display: flex;
     align-items: center;
-    gap: 25px;
-
-    @media (max-width:480px) {display: none};
 `
 
 const Mobile = styled.span`

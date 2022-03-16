@@ -6,6 +6,7 @@ import HomeSection from './components/HomeSection/HomeSection';
 import { DarkNavContext } from './components/DarkNavContext';
 import Projects from './components/MyProjects/Projects';
 import Resume from './components/Resume/Resume';
+import Certificates from './components/Resume/Certificates';
 import ContactMe from './components/ContactMe';
 import NotFound from './components/NotFound';
 
@@ -21,6 +22,7 @@ function App() {
 						<Route path="/" element={<HomeSection />} />
 						<Route path="myprojects" element={<Projects />} />
 						<Route path="resume" element={<Resume />} />
+						<Route path="mycertificates" element={<Certificates />} />
 						<Route path="contactme" element={<ContactMe />} />
 						<Route path="*" element={<NotFound />} />
 					</Routes>

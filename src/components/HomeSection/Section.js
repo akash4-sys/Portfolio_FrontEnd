@@ -148,8 +148,6 @@ const Title = styled.div`
 
    @media (max-width:480px){
        font-size:6.5vh;
-    //   margin-left:20px;
-    //   margin-right:20px;
    }
 `
 
@@ -157,5 +155,10 @@ const SubHeading = styled.div`
     padding-top:20px;
     font-size:3vh;
     font-family: 'Oswald', sans-serif;
+
+    @media (max-width:480px) {
+        margin:1.5vh;
+        padding:0px !important;
+    }
 `
 const MidSection = styled.div``

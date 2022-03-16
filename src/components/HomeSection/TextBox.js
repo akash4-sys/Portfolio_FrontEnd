@@ -104,6 +104,12 @@ const Section = styled.div`
         animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
     }
 
+    @media (max-width:992px) {
+        letter-spacing:3px;
+        h1{ font-size: 7.1vw;}
+        h3 { font-size: 3.8vw;}
+    }
+
     @media (max-width:768px)
     {
         letter-spacing:4px;

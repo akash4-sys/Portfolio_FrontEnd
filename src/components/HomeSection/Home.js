@@ -4,8 +4,6 @@ import TextBox from './TextBox';
 import SkillGlobe from './SkillGlobe';
 import '../component_css/home.css'
 
-// TODO: make it responsive for 980px
-
 function Home() {
 
     const [animation, setAnimation] = useState(0);
