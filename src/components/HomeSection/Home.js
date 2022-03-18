@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import TextBox from './TextBox';
 import SkillGlobe from './SkillGlobe';
 import '../component_css/home.css'
+import '../component_css/home_background.css'
 
 function Home() {
 
@@ -28,6 +29,7 @@ function Home() {
         <>
             <Front>
                 <Container id="mainscreen">
+                    <div id="stars"></div>
                     <TextBox start={animation}/>
                     <SkillGlobe />
                 </Container>
@@ -60,20 +62,8 @@ const Container = styled.main`
     display:flex;
     transform:scale(0);
     align-items:center;
-    
-    &:before{
-        background: url("images/bg.png") center center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position:fixed;    
-        position:absolute;
-        content:"";
-        top:0;
-        left:0;
-        right:0;
-        bottom: 0;
-        z-index: -1;
-    }
+    color:white;
+    background: radial-gradient(ellipse, #1b2735 0%, #090a0f 100%);
 `
 
 const MyIntro = styled.div`

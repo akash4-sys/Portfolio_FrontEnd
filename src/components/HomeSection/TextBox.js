@@ -3,41 +3,36 @@ import styled, { keyframes } from 'styled-components';
 
 function TextBox(props) {
     const start = props.start;
-    let FirstArr = "My Portfolio".split("");
-    let SecondArr = "I'm C++ Programmer".split("");
-    let secsub = "And".split("");
+    let FirstArr = "Hi,".split("");
+    let SecondArr = "I'm Akash,".split("");
+    let secsub = "C++ Programmer".split("");
     let thirdsub = "Web Developer".split("");
 
     return (
         start &&
         <Section>
-            <h1>
-                { FirstArr.map((Char, i) => ( <span key={i}>{Char}</span> ))}
-            </h1>
+            <Header>
+                <HiBlock></HiBlock>
+                <h1>
+                    {FirstArr.map((Char, i) => (<span key={i}>{Char}</span>))}
+                </h1>
+            </Header>
+            <Header>
+                <Block></Block>
+                <h1>
+                    {SecondArr.map((Char, i) => (<span key={i}>{Char}</span>))}
+                </h1>
+            </Header>        
             <h3>
-                { SecondArr.map((Char, i) => ( <span key={i}>{Char}</span> ))}
-                <br/>
-                { secsub.map((Char, i) => ( <span key={i}>{Char}</span> ))}
-                <br/>
-                { thirdsub.map((Char, i) => ( <span key={i}>{Char}</span> ))}
+                {secsub.map((Char, i) => (<span key={i}>{Char}</span>))}
+                <br />
+                {thirdsub.map((Char, i) => (<span key={i}>{Char}</span>))}
             </h3>
         </Section>
     )
 }
 
 export default TextBox;
-
-const animation = keyframes`
-    0%{
-        opacity: 0; transform: translateX(-100px);
-        filter: blur(5px);
-    }
-    100%{ 
-        opacity: 1; 
-        transform: translateY(0px) ;
-        filter: blur(0px);
-    }
-`
 
 const bounce = keyframes`
     0%   { transform: scale(1,1)       }
@@ -59,37 +54,61 @@ const stopbounce = keyframes`
     0% { transform: scale(1,1)       }
 `
 
+const subtextappear = keyframes`
+    0%{
+        opacity:0; 
+        transform: translateY(30px);
+    }
+    50%{ 
+        opacity:1;
+        transform: translateY(15px); 
+    }
+    100%{
+        opacity:1; 
+        transform:translateY(0px);
+    }
+`
+
+const mainFadeIn  = keyframes`
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+`
+
 const Section = styled.div`
     width: 50%;
     font-family: 'Playfair Display', serif;
     display:inline-block;
-    color:#ccd6f6;
-    opacity:0;
     letter-spacing:7px;
-    animation-name: ${animation};
-    animation-duration: 250ms;
-    animation-fill-mode:forwards;
-    // position:relative;
-    // top: calc(30px + 27vh);
     animation-timing-function: cubic-bezier(0.75, 0.82, 0.165, 1);
     animation-delay:0.90s;
     text-align: initial;
 
     h1{
         font-size:5vw;
-        span:nth-child(3){ padding-left: 14px;}
+        span:nth-child(5){ padding-left: 16px;}
+        animation: ${mainFadeIn} 2s forwards;
+        animation-delay: 1.6s;
+        opacity: 0;
+        align-items: baseline;
+        position: relative;
     }
 
     h3{
+        opacity:0;
+        animation: ${subtextappear} 500ms ease-out 2s forwards;
         font-size:3.4vw;
-        span:nth-child(4), span:nth-child(8), span:nth-child(27){ padding-left: 14px;}
+        span:nth-child(5), span:nth-child(19){ padding-left: 14px;}
     }
 
     span{
-        display:inline-block;
         animation-duration:1s;
         animation-fill-mode:both;
         transform-origin: bottom;
+        display:inline-block;
         padding-top:7px;
     }
     
@@ -114,21 +133,81 @@ const Section = styled.div`
     {
         letter-spacing:4px;
 
-        h1{ font-size: 5.9vw;}
+        h1{ font-size: 7vw;}
         h3{
-            font-size:3.65vw;
-            span:nth-child(4), span:nth-child(8), span:nth-child(27){ padding-left: 10px;} 
+            font-size:4vw;
+            span:nth-child(5), span:nth-child(19){ padding-left: 10px;} 
         }
     }
 
     @media (max-width:480px){
         width:100%;
-        h1 { font-size: 9.9vw; }
-        h3 { font-size: 6.8vw; }
+		text-align:center;
+        h1 { font-size: 12.9vw; }
+        h3 { font-size: 7.8vw; }
     }
 
     @media (max-width:400px) {
         h1 { font-size: 11.9vw; }
         h3 { font-size: 6.3vw; }
     }
+`
+
+const Header = styled.div`
+    display:flex;
+    align-items:center;
+    position: relative;
+    height:100%;
+	@media (max-width:480px){
+		justify-content:center;
+	}
+	@media (min-width:480px){
+		width:88%;
+	}
+`
+
+const hiBlock = keyframes`
+	0%{
+    	width: 0%;
+    	left: 0;
+	}
+	50% {
+	  	width: var(--blockwidth);
+	 	left: 0;
+	}
+	100% {
+	  	width: 0;
+		left: var(--blockwidth);
+	}
+`
+
+const HiBlock = styled.div`
+    width:0%;
+    height: inherit;
+    background-color:#C8C8C8;
+    position:absolute;
+	--blockwidth:20%;
+	@media (max-width:480px){
+		--blockwidth:70%;
+	}
+    animation: ${hiBlock} 2s cubic-bezier(.74, .06, .4, .92) forwards;
+`
+
+const mainBlock = keyframes`
+	0%{
+		width: 0%;
+		right: 0;
+	}
+	50% {
+	  width: 100%;
+	  right: 0;
+	}
+	100% {
+	  width: 0;
+	  right: 100%;
+	}
+`
+
+const Block = styled(HiBlock)`
+	animation: ${mainBlock} 2s cubic-bezier(.74, .06, .4, .92) forwards;
 `

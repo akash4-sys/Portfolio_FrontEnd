@@ -69,12 +69,12 @@ const Container = styled.div`
     @media (max-width: 480px) { 
         width:0px;
         height:0px;
+        padding: 0px;
     }
 `
 
 const Content = styled.div`
     height:600px;
-    color:#ccd6f6;
     width:70%;
     font-weight:1000;
 

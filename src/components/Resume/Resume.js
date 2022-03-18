@@ -18,11 +18,7 @@ function Resume() {
 
                 <Mobile className="d-flex justify-content-between gap-3">
                     <Anchor href="Resume.pdf" target="_blank" className="float-end"> &gt;&gt; Checkout the pdf</Anchor>
-                    <div>
-                        <BrandAnchor href="https://www.linkedin.com/in/akash-mishra-242964230/" target="_blank"><i className="fa-brands fa-linkedin"></i></BrandAnchor>
-                        &nbsp;&nbsp;&nbsp;
-                        <BrandAnchor href="https://github.com/akash4-sys" target="_blank"><i className="fa-brands fa-github"></i></BrandAnchor>
-                    </div>
+                    <Anchor href="/mycertificates">My Certificates</Anchor>
                 </Mobile>
             </Container>
             <Right>
