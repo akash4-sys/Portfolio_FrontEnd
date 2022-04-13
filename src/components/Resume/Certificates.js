@@ -46,29 +46,36 @@ function Certificates() {
                     <FolderItems>
                         <Image src="/images/GFG_HTML.jpg" alt="images" />
                         <FlexContainer className="d-flex align-items-center justify-content-between m-3">
-                            <div className="fs-4">HTML Certificate</div>
+                            <div className="fs-4">HTML</div>
                             <CertificateLink href="https://media.geeksforgeeks.org/courses/certificates/a2e2419c8dda3ae17f9f2a201001893e.pdf" id="ProjectLink" target="_blank"><i className="fa-solid fa-up-right-from-square"></i></CertificateLink>
                         </FlexContainer>
                     </FolderItems>
                     <FolderItems >
                         <Image src="/images/GFGC++.jpg" alt="images" />
                         <FlexContainer className="d-flex align-items-center justify-content-between m-3">
-                            <div className="fs-4">C++ Productivity Certificate</div>
+                            <div className="fs-4">C++ Productivity </div>
                             <CertificateLink href="https://media.geeksforgeeks.org/courses/certificates/a2e2419c8dda3ae17f9f2a201001893e.pdf" id="ProjectLink" target="_blank"><i className="fa-solid fa-up-right-from-square"></i></CertificateLink>
                         </FlexContainer>
                     </FolderItems>
                     <FolderItems >
                         <Image src="/images/GFG_Python.jpg" alt="images" />
                         <FlexContainer className="d-flex align-items-center justify-content-between m-3">
-                            <div className="fs-4">Python for C++ dev Certificate</div>
+                            <div className="fs-4">Python for C++ dev</div>
                             <CertificateLink href="https://media.geeksforgeeks.org/courses/certificates/a2e2419c8dda3ae17f9f2a201001893e.pdf" id="ProjectLink" target="_blank"><i className="fa-solid fa-up-right-from-square"></i></CertificateLink>
                         </FlexContainer>
                     </FolderItems>
                     <FolderItems className="ProjectAnimation">
                         <Image src="/images/React.jpg" alt="images" />
                         <FlexContainer className="d-flex align-items-center justify-content-between m-3">
-                            <div className="fs-4">React Certificate</div>
+                            <div className="fs-4">React</div>
                             <CertificateLink href="https://media.geeksforgeeks.org/courses/certificates/a2e2419c8dda3ae17f9f2a201001893e.pdf" id="ProjectLink" target="_blank"><i className="fa-solid fa-up-right-from-square"></i></CertificateLink>
+                        </FlexContainer>
+                    </FolderItems>
+                    <FolderItems className="ProjectAnimation">
+                        <Image src="/images/Java_Udemy.jpg" alt="images" />
+                        <FlexContainer className="d-flex align-items-center justify-content-between m-3">
+                            <div className="fs-4">Java Classes And Object</div>
+                            <CertificateLink href="/notavailable" id="ProjectLink" target="_blank"><i className="fa-solid fa-up-right-from-square"></i></CertificateLink>
                         </FlexContainer>
                     </FolderItems>
                 </GridContainer>
@@ -76,7 +83,7 @@ function Certificates() {
             </Container>
             <div className="text-center mb-5 mt-5" style={{color:"#ccd6f6"}}>
                 All Certificate's Owned by Akash mishra
-                <p>Total Certificate's: 4</p>
+                <p>Total Certificate's: 5</p>
             </div>
         </Page>
     )

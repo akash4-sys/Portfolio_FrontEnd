@@ -77,7 +77,7 @@ function Archive() {
                             </tbody>
                         </Table>
                         :
-                        <div className="bg-danger bg-gradient container">Seems like I have hit Github Api limit</div>
+                        <Error className="bg-danger bg-gradient container RevealProjectTitle mt-4 text-center">Github Api Limit Reached</Error>
                 }
             </Container>
             <Right>
@@ -249,4 +249,11 @@ const Name = styled.th`
 const Description = styled.th`
     width:45%;
     padding:2%;
+`
+
+const Error = styled.div`
+    animation-delay:1s;
+    font-size:2.5rem;
+    border-radius:5px;
+    padding:15%;
 `

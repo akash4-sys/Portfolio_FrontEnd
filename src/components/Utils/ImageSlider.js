@@ -29,6 +29,9 @@ function ImageSlider() {
             <Wrap>
                 <img src="/images/React.jpg" alt="SliderImage" />
             </Wrap>
+            <Wrap>
+                <img src="/images/Java_Udemy.jpg" alt="SliderImage" />
+            </Wrap>
         </Carousel>
     )
 }
