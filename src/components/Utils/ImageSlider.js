@@ -56,7 +56,7 @@ const Carousel = styled(Slider)`
     }
 
     @media (max-width:576px) {
-        margin-top:13vh;
+        margin-bottom:15vh;
     }
 `
 

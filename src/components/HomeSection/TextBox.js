@@ -78,6 +78,12 @@ const mainFadeIn  = keyframes`
   }
 `
 
+const glow = keyframes`
+    40% {
+    	text-shadow: 0 0 8px #fff;
+    }
+`
+
 const Section = styled.div`
     width: 50%;
     font-family: 'Playfair Display', serif;
@@ -89,12 +95,21 @@ const Section = styled.div`
 
     h1{
         font-size:5vw;
-        span:nth-child(5){ padding-left: 16px;}
         animation: ${mainFadeIn} 2s forwards;
         animation-delay: 1.6s;
         opacity: 0;
         align-items: baseline;
         position: relative;
+        span:nth-child(5){ padding-left: 16px;}
+		span:nth-child(n+5):not(:last-child){ 
+			animation:${glow} 2.5s linear infinite 2s;
+		}
+		span:nth-child(n+5):not(:last-child):hover{
+			animation:${glow} 2.5s linear infinite 2s, ${bounce} 1s cubic-bezier(0.280, 0.840, 0.420, 1);
+		}
+		span:nth-child(n+5):not(:last-child):not(hover){ 
+			animation:${glow} 2.5s linear infinite 2s, ${stopbounce} 1s cubic-bezier(0.280, 0.840, 0.420, 1);
+		}
     }
 
     h3{
@@ -160,10 +175,9 @@ const Header = styled.div`
     height:100%;
 	@media (max-width:480px){
 		justify-content:center;
+        width:initial;
 	}
-	@media (min-width:480px){
-		width:88%;
-	}
+    width:fit-content;
 `
 
 const hiBlock = keyframes`
@@ -172,12 +186,12 @@ const hiBlock = keyframes`
     	left: 0;
 	}
 	50% {
-	  	width: var(--blockwidth);
+	  	width:100%;
 	 	left: 0;
 	}
 	100% {
 	  	width: 0;
-		left: var(--blockwidth);
+		left:100%;
 	}
 `
 
@@ -186,10 +200,6 @@ const HiBlock = styled.div`
     height: inherit;
     background-color:#C8C8C8;
     position:absolute;
-	--blockwidth:20%;
-	@media (max-width:480px){
-		--blockwidth:70%;
-	}
     animation: ${hiBlock} 2s cubic-bezier(.74, .06, .4, .92) forwards;
 `
 

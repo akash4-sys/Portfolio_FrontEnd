@@ -18,7 +18,7 @@ function Home() {
         window.scrollTo(0, 0);
         setAnimation(1);
         
-        setInterval(() => {
+        setTimeout(() => {
             document.getElementById('myintro').classList.add('selfdestruct');
         }, 1500);
 

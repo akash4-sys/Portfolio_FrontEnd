@@ -37,9 +37,9 @@ function Certificates() {
         <Page>
             <Container className="m-5">
                 <div className="d-flex justify-content-between align-items-center fs-1">
-                    <PageTitle className="fw-bold my-5 RevealProjectTitle">My Certificates</PageTitle>
+                    <PageTitle className="fw-bold mb-5 RevealProjectTitle">My Certificates</PageTitle>
                     {
-                        (imageSlider) ? <PageLayout onClick={gridPageMode} className="fas fa-th"></PageLayout> : <PageLayout onClick={fullPageMode} className="fa-brands fa-slideshare"></PageLayout>
+                        (imageSlider) ? <PageLayout onClick={gridPageMode} className="fas fa-th mb-5"></PageLayout> : <PageLayout onClick={fullPageMode} className="fa-brands fa-slideshare mb-5"></PageLayout>
                     }
                 </div>
                 <GridContainer id="gridContainer">
@@ -173,17 +173,6 @@ const FolderItems = styled.div`
     opacity:0;
     box-shadow:rgb(0 0 0 / 69%) 0px 26px 30px -10px, rgb(0 0 0 / 73%) 0px 16px 10px -10px;
     animation: 2s ease-in forwards fadeIn;
-    // cursor:pointer;
-    // transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
-
-    // &:hover{
-    //     transform:scale(1.05) !important;
-    //     box-shadow: rgba(0 0 0 / 80%) 0px 40px 58px -16px, rgb(0 0 0 / 72%) 0px 30px 22px -10px;
-    //     border-color:rgba(249, 249, 249, 0.8);
-    //     span{
-    //         color:#58e2c4;
-    //     }
-    // }
 
     span{
         display:block;

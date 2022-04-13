@@ -93,7 +93,7 @@ function Projects() {
                 <SecondTitle className="fs-1 text-center content fw-bold">Other Noteworthy Projects</SecondTitle>
                 <div className="d-flex justify-content-center text-center pb-5">
                     <Archive className="content">
-                        <a href="/" className="fs-5">checkout the archive</a>
+                        <a href="/archive" className="fs-5">checkout the archive</a>
                     </Archive>
                 </div>
 
