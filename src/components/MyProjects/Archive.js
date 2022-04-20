@@ -9,29 +9,15 @@ function Archive() {
 
     const [repos, setRepo] = useState([]);
 
-    // name, created_at, url, description, languages, stargazers_count
-
     async function fetchRepositories() {
         try {
-            let res = await axios.get('http://localhost/github/archive');
-            // console.log(res.data);
+            // let res = await axios.get('http://localhost/github/archive');
+            let res = await axios.get('https://akash4-server.herokuapp.com/github/archive');
             setRepo(res.data);
-
-            // let res = [
-            //     { "name": "keyboard", "description": "Toward a more useful keyboard Toward a more useful keyboard Toward a more useful keyboard Toward a more useful keyboard Toward a more useful keyboard", "language":"c++, javascript, java", "url": "https://api.github.com/repos/jasonrudolph/keyboard", "created_at": "2013-03-30T16:01:43Z", "stargazers_count": 235 },
-            //     { "name": "keyboard", "description": "Toward a more useful keyboard", "language":"c++, javascript, java", "url": "https://api.github.com/repos/jasonrudolph/keyboard", "created_at": "2013-03-30T16:01:43Z", "stargazers_count": 235 },
-            //     { "name": "keyboard", "description": "Toward a more useful keyboard", "language":"c++, javascript, java", "url": "https://api.github.com/repos/jasonrudolph/keyboard", "created_at": "2013-03-30T16:01:43Z", "stargazers_count": 235 },
-            //     { "name": "keyboard", "description": "Toward a more useful keyboard", "language":"c++, javascript, java", "url": "https://api.github.com/repos/jasonrudolph/keyboard", "created_at": "2013-03-30T16:01:43Z", "stargazers_count": 235 }
-            // ]
-
-            // setRepo(res);
-
         } catch (err) {
             console.log(err);
         }
     }
-
-    // console.log(apiError)
 
     useEffect(() => {
         fetchRepositories();
