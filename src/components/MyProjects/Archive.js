@@ -2,18 +2,18 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 import moment from 'moment';
-
-// TODO: Remove Moment and create your own date function
+import LoadingBar from '../Utils/LoadingBar';
 
 function Archive() {
 
     const [repos, setRepo] = useState([]);
+    const [isLoading, setLoading] = useState(true);
 
     async function fetchRepositories() {
         try {
-            // let res = await axios.get('http://localhost/github/archive');
             let res = await axios.get('https://akash4-server.herokuapp.com/github/archive');
             setRepo(res.data);
+            setLoading(false);
         } catch (err) {
             console.log(err);
         }
@@ -35,35 +35,38 @@ function Archive() {
                 <PageTitle className="fw-bold mt-5 RevealProjectTitle">Archive</PageTitle>
                 <SubTitle className="fs-5 RevealProjectTitle" style={{ color: "#58e2c4" }}>A list of things I've worked on</SubTitle>
                 {
-                    (repos.length) ?
-                        <Table className="mt-5">
-                            <thead>
-                                <tr>
-                                    <th className="headers fs-5">Created At</th>
-                                    <th className="headers fs-5">Repository</th>
-                                    <th className="headers fs-5">Languages</th>
-                                    <th className="headers fs-5">Description</th>
-                                    <th className="headers fs-5">Stars</th>
-                                    <th className="headers fs-5">Url</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {
-                                    repos.map((Repo, i) => (
-                                        <Row key={i}>
-                                            <th className="ps-2">{moment(Repo.created_at).format("MM YYYY")}</th>
-                                            <Name>{Repo.name}</Name>
-                                            <th>{Repo.language}</th>
-                                            <Description>{Repo.description}</Description>
-                                            <th>{Repo.stargazers_count}</th>
-                                            <th><a href={Repo.url} target="_blank" rel="noopener noreferrer"><i className="fa-solid fa-up-right-from-square"></i></a></th>
-                                        </Row>
-                                    ))
-                                }
-                            </tbody>
-                        </Table>
-                        :
-                        <Error className="bg-danger bg-gradient container RevealProjectTitle mt-4 text-center">Github Api Limit Reached</Error>
+                    (isLoading) ? <LoadingBar /> :
+                        (
+                            (repos.length) ?
+                            <Table className="mt-5">
+                                <thead>
+                                    <tr>
+                                        <th className="headers fs-5">Created At</th>
+                                        <th className="headers fs-5">Repository</th>
+                                        <th className="headers fs-5">Languages</th>
+                                        <th className="headers fs-5">Description</th>
+                                        <th className="headers fs-5">Stars</th>
+                                        <th className="headers fs-5">Url</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {
+                                        repos.map((Repo, i) => (
+                                            <Row key={i}>
+                                                <th className="ps-2">{moment(Repo.created_at).format("MM YYYY")}</th>
+                                                <Name>{Repo.name}</Name>
+                                                <th>{Repo.language}</th>
+                                                <Description>{Repo.description}</Description>
+                                                <th>{Repo.stargazers_count}</th>
+                                                <th><a href={Repo.url} target="_blank" rel="noopener noreferrer"><i className="fa-solid fa-up-right-from-square"></i></a></th>
+                                            </Row>
+                                        ))
+                                    }
+                                </tbody>
+                            </Table>
+                            :
+                            <Error className="bg-danger bg-gradient container RevealProjectTitle mt-4 text-center">Github Api Limit Reached</Error>
+                        )
                 }
             </Container>
             <Right>
@@ -171,7 +174,7 @@ const SubTitle = styled.div`
     animation-delay:0.3s;
 `
 
-const Table  = styled.table`
+const Table = styled.table`
     color:white;
     width:100%;
 
