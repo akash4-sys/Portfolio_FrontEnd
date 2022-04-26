@@ -105,12 +105,6 @@ const Anchor = styled.a`
     @media (min-width: 1920px) { font-size:30px}
 `
 
-const BrandAnchor = styled(Anchor)`
-    font-size:25px;
-    @media (max-width: 480px) { font-size:20px}
-    @media (min-width: 1920px) { font-size:40px}
-`
-
 const Line = styled.div`
     border: 1px solid white;
     height: 10vh;

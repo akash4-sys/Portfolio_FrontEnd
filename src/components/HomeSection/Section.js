@@ -36,7 +36,7 @@ function Section(props) {
                 }
             </Container>
             <MidSection className="mt-5">
-                <Skills ScrollTop={Scroll_Top} EndOfPage={End_Of_Page} ColorPos={NavColorPos}/>
+                <Skills ScrollTop={Scroll_Top} EndOfPage={End_Of_Page} ColorPos={NavColorPos} />
             </MidSection>
         </Back>
     )

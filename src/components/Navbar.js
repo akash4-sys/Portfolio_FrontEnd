@@ -9,9 +9,9 @@ function Navbar() {
     return (
         <nav className={`navbar navbar-expand-lg navbar-dark fixed-top z-index-2 p-0 ${context}`}>
             <div className="container-fluid addBlur">
-                <a className="navbar-brand ms-2 d-flex align-items-center" href="/">
+                <a className="navbar-brand ms-2 d-flex align-items-center" href="/contactme">
                     <BrandImage src="/images/icon.gif" width='40' height='40' className="rounded-circle mt-1 me-2" alt=".."/>
-                    <BrandName href="/contactme" className="mt-2 text-decoration-none text-white">Akash Mishra</BrandName>
+                    <BrandName className="mt-2 text-decoration-none text-white">Akash Mishra</BrandName>
                 </a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>

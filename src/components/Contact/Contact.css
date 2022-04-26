@@ -1,0 +1,79 @@
+.label-visiblity{
+  height: inherit !important;
+  width: initial !important;
+  opacity: 1 !important;
+}
+
+.fixedInputLabel {
+  color: #58e2c4;
+  font-size: 1.1rem !important;
+  transform: translateY(-2.5rem);
+  width: fit-content;
+  background-color: #112240;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  border-radius: 3px;
+  padding: 0px 5px 3px 5px;
+  height: fit-content !important;
+  margin-bottom: 2rem;
+  padding-top: 3px !important;
+}
+
+.indianred {
+  color: indianred !important;
+}
+
+.fixedEmailInputLabel {
+  color: #58e2c4;
+  font-size: 1.1rem !important;
+  transform: translate(var(--Xaxis), -2.5rem) !important;
+  width: fit-content;
+  background-color: #112240;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  border-radius: 3px;
+  padding: 0px 5px 3px 5px;
+  height: fit-content !important;
+  margin-bottom: 2rem;
+  padding-top: 3px !important;
+}
+
+.bootstrap_alert_custom {
+  position: absolute;
+  top: 7rem;
+  padding: 0.5rem;
+  margin: 0px;
+  font-size: 1.1rem;
+  width: 84%;
+}
+
+.bootstrap_alert_custom + i{
+  font-size:1.25rem;
+}
+
+.container-resize{
+  width:70%;
+}
+
+.contact_form_font_size{
+  font-size: 1.25rem;
+}
+
+@media (min-width: 2000px){
+  .contact_form_font_size{
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px){
+  .container-resize{
+    width:80%;
+  }
+}
+
+@media (max-width: 480px){
+  .container-resize{
+    width:90%;
+  }
+  .contact_form_font_size{
+    font-size: 1.18rem;
+  }  
+}

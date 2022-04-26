@@ -8,7 +8,7 @@ import Projects from './components/MyProjects/Projects';
 import Archive from './components/MyProjects/Archive';
 import Resume from './components/Resume/Resume';
 import Certificates from './components/Resume/Certificates';
-import ContactMe from './components/ContactMe';
+import ContactMe from './components/Contact/ContactMe';
 import NotFound from './components/NotFound';
 
 function App() {

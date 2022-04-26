@@ -66,7 +66,7 @@ function Projects() {
                         </Tech>
                         <ProjectLink href="/" id="ProjectLink"><i className="fa-brands fa-github"></i></ProjectLink>
                         &nbsp;&nbsp;&nbsp;&nbsp;
-                        <ProjectLink href="/"><i className="fa-solid fa-up-right-from-square"></i></ProjectLink>
+                        <ProjectLink href="https://ultrachat.netlify.app/"><i className="fa-solid fa-up-right-from-square"></i></ProjectLink>
                     </RightCol>
                     <LeftProjectImage className="rounded-3 content" />
 
