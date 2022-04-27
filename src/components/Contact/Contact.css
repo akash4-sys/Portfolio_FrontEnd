@@ -2,6 +2,7 @@
   height: inherit !important;
   width: initial !important;
   opacity: 1 !important;
+  font-size:1.1rem !important;
 }
 
 .fixedInputLabel {
@@ -36,6 +37,10 @@
   padding-top: 3px !important;
 }
 
+.fixedInputLabel:hover, .fixedEmailInputLabel:hover{
+  border:1px solid;
+}
+
 .bootstrap_alert_custom {
   position: absolute;
   top: 7rem;
@@ -61,6 +66,18 @@
   .contact_form_font_size{
     font-size: 1.8rem;
   }
+
+  .fixedInputLabel{
+    font-size:1.5rem !important;
+  }
+
+  .fixedEmailInputLabel{
+    font-size:1.5rem !important;
+  }
+
+  .bootstrap_alert_custom{
+    top:12rem;
+  }
 }
 
 @media (max-width: 768px){
@@ -76,4 +93,11 @@
   .contact_form_font_size{
     font-size: 1.18rem;
   }  
+}
+
+@keyframes typing{
+  from {background-size:0 200%}
+}
+@keyframes blinkline{
+  50% {background-position:0 -100%,0 0}
 }

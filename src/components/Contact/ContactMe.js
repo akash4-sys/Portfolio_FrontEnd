@@ -215,7 +215,7 @@ function ContactMe() {
 
             setTimeout(() => {
                 setSentSucces(false);
-            }, 5000)
+            }, 7000)
         }
     }
 
@@ -299,7 +299,8 @@ const Section = styled.section`
     --MessageXaxis:350px;
     background-color:#0a192f;
     height:100vh;
-    color:#ccd6f6;
+    color:#ccd6f6;    
+    overflow: hidden;
 
     h5{
         display: flex;
@@ -366,6 +367,7 @@ const InputForm = styled.div`
         width:0%;
         height:0%;
         transform:translate(0px);
+        font-size:0px;
     }
 
     input:focus ~ label span[id="email"], input:not(:placeholder-shown) ~ label span[id="email"]{
@@ -377,10 +379,14 @@ const InputForm = styled.div`
         width:0%;
         height:0;
         transform:translate(0px);
+        font-size:0px;
     }
 
     input:focus ~ label span[id="message"], input:not(:placeholder-shown) ~ label span[id="message"]{
         transform:translate(var(--MessageXaxis), -2.5rem) !important;
+        @media (max-width:480px){
+            opacity:0 !important;
+        }
     }
 
     input{ 
@@ -447,6 +453,10 @@ const InputForm = styled.div`
         padding: 3px 5px 3px 5px;
         height: fit-content !important;
         margin-bottom: 2rem;
+
+        @media (min-width: 2000px) {
+            font-size:1.6rem;
+        }
     }
 `
 
@@ -479,7 +489,7 @@ const ButtonContainer = styled.div`
     }
 
     button:hover, input:hover{
-        filter: brightness(0.8);
+        filter: brightness(0.9) !important;
     }
 `
 
@@ -515,10 +525,16 @@ const ButtonText = styled.span`
     animation:50ms ease-in 400ms forwards ${SentCompleted};
 `
 
-const FinalGreetings = styled.div`
+const FinalGreetings = styled.span`
+    --n:100;
     margin-top:3rem;
     font-weight:bolder;
-    transform:translateY(1.5rem);
-    filter:blur(1px);
-    animation:500ms ease-in forwards ${SlideUP};
+    letter-spacing: 0.05em;
+    color:#0000;
+    background: linear-gradient(-90deg,#58e2c4 5px,#0000 0) 10px 0, linear-gradient(#58e2c4 0 0) 0 0;
+    background-size:calc(var(--n)*1ch) 200%;
+    -webkit-background-clip:padding-box,text;
+    background-clip:padding-box,text;
+    background-repeat:no-repeat;
+    animation: blinkline .7s infinite steps(1), typing calc(var(--n)*70ms) steps(var(--n)) forwards;
 `
