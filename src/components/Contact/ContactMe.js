@@ -11,14 +11,15 @@ function ContactMe() {
     const [CurrentIteration, setCurrentIteration] = useState(0);
     const [XAxis, setXAxis] = useState(0);
     const [credentials, setCredentials] = useState({ name: "", email: "", message: "" });
-    const [SentSuccess, setSentSucces] = useState(false);
+    const [SentSuccess, setSentSuccess] = useState(false);
     const [UserContact, setUserContact] = useState(false);
     const [Editted, setEditted] = useState(false);
+    const [Sending, setSending] = useState();
 
     useEffect(() => {
         var CF = document.getElementById("contactForm");
         if (CurrentIteration === 1) {
-            if(Editted){
+            if (Editted) {
                 let OX = getComputedStyle(CF).getPropertyValue('--Xaxis').slice(0, -2);
                 let oldXaxis = parseInt(OX);
                 let OM = getComputedStyle(CF).getPropertyValue("--MessageXaxis").slice(0, -2);
@@ -30,7 +31,7 @@ function ContactMe() {
             CF.style.setProperty('--Xaxis', XAxis + "px");
         }
         else {
-            if( document.getElementById("message").style.opacity === 1 || XAxis !== 0){
+            if (document.getElementById("message").style.opacity === 1 || XAxis !== 0) {
                 CF.style.setProperty('--MessageXaxis', XAxis + "px");
             }
         }
@@ -42,7 +43,7 @@ function ContactMe() {
         icon.classList.add(Add);
     }
 
-    function ActivateNextButton(){
+    function ActivateNextButton() {
         document.getElementById('NextButton').style.backgroundColor = "#58e2c4";
         setNextActive(true);
     }
@@ -54,16 +55,16 @@ function ContactMe() {
 
     function SetNextLabel(Class) {
         let input = document.getElementById(Class);
-        if(!Editted){
+        if (!Editted) {
             setXAxis(XAxis + input.offsetWidth + 10);
         }
-        else{
+        else {
             setXAxis(input.offsetWidth + 10);
         }
         DeactivateNextButton();
         setCurrentIteration(CurrentIteration + 1);
     }
-    
+
     function changeInputAttributes(Type, Name) {
         let inputArea = document.getElementById('inputArea');
         inputArea.setAttribute("type", Type);
@@ -92,7 +93,7 @@ function ContactMe() {
 
             SetNextLabel("name");
 
-            if(document.getElementById("Content_Email").innerHTML === credentials.email){ ActivateNextButton(); }
+            if (document.getElementById("Content_Email").innerHTML === credentials.email) { ActivateNextButton(); }
         }
 
         if (NextActive && CurrentIteration === 1) {
@@ -110,14 +111,14 @@ function ContactMe() {
             SetNextLabel("email");
         }
 
-        if(NextActive && ( credentials.message || credentials.email)){ 
-            if(inputArea.name === "message"){
+        if (NextActive && (credentials.message || credentials.email)) {
+            if (inputArea.name === "message") {
                 inputArea.value = credentials.message;
-                if(credentials.message.length >= 10){
+                if (credentials.message.length >= 10) {
                     document.getElementById('finalContact').style.backgroundColor = "#58e2c4";
                 }
             }
-            else if(inputArea.name === "email"){
+            else if (inputArea.name === "email") {
                 inputArea.value = credentials.email;
             }
         }
@@ -131,13 +132,13 @@ function ContactMe() {
 
         if (!CurrentIteration) {
             if (input.length >= 3) { ActivateNextButton(); } else { DeactivateNextButton(); }
-        }  
+        }
         else if (CurrentIteration === 1) {
             if (validator.isEmail(input)) {
 
                 ActivateNextButton();
                 document.querySelectorAll(".wrong_email").forEach(tag => tag.classList.remove("indianred"));
-                document.getElementById("bootstrap_alert_box").classList.add("fade");
+                setAlert(0);
 
             } else {
 
@@ -162,7 +163,7 @@ function ContactMe() {
             if (currentInput) {
                 document.getElementById("Content_Email").innerHTML = credentials.email;
                 document.getElementById("email").classList.add("fixedEmailInputLabel");
-            }else{
+            } else {
                 document.getElementById("Content_Email").innerHTML = "your email address";
                 document.getElementById("email").classList.remove("fixedEmailInputLabel");
             }
@@ -175,27 +176,27 @@ function ContactMe() {
             ActivateNextButton();
             document.querySelectorAll(".wrong_email").forEach(tag => tag.classList.remove("indianred"));
             document.getElementById("bootstrap_alert_box").classList.add("fade");
-            
+
         }
 
-        if(CurrentIteration === 2){
+        if (CurrentIteration === 2) {
 
-            if(label === "email" && inputArea.name !== "email"){
+            if (label === "email" && inputArea.name !== "email") {
 
                 let email_width = document.getElementById("email").offsetWidth;
                 setXAxis(XAxis - email_width - 10);
 
                 changeInputAttributes("email", "email");
-                SwitchIcons("fa-message","fa-envelope");
+                SwitchIcons("fa-message", "fa-envelope");
                 inputArea.value = credentials.email;
                 setCurrentIteration(CurrentIteration - 1);
                 ActivateNextButton();
 
-            }else if(label === "name" && inputArea.name !== "name"){
+            } else if (label === "name" && inputArea.name !== "name") {
 
                 setEditted(true);
                 changeInputAttributes("text", "name");
-                SwitchIcons("fa-message","fa-user");
+                SwitchIcons("fa-message", "fa-user");
                 inputArea.value = credentials.name;
                 setCurrentIteration(CurrentIteration - 2);
                 ActivateNextButton();
@@ -204,18 +205,45 @@ function ContactMe() {
         }
     }
 
-    function handleSubmit(e) {
+    async function handleSubmit(e) {
         e.preventDefault();
         if (document.getElementById('finalContact').style.backgroundColor !== "darkgray" && credentials?.name && credentials.email && credentials.message) {
-            document.getElementById('inputArea').value = "";
-            setSentSucces(true);
-            document.getElementById("Content_Message").innerHTML = "Send Something again?";
 
-            setUserContact(true);
+            try {
+                setSending(true);
+                let res = await fetch("http://localhost:80/contactform/clientdetails", {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ name: credentials.name, email: credentials.email, message: credentials.message })
+                });
 
-            setTimeout(() => {
-                setSentSucces(false);
-            }, 7000)
+                let response = await res.json();
+
+                if (response.success) {
+                    setSentSuccess(true);
+                    setUserContact(true);
+                    setSending(false);
+                    document.getElementById("Content_Message").innerHTML = "Send Something again?";
+                    document.getElementById('inputArea').value = "";
+
+                    setTimeout(() => {
+                        setSentSuccess(false);
+                    }, 7000)
+                }
+            } catch (err) {
+
+                setSending(false);
+                setAlert(1);
+                document.getElementById("alertMsg").innerHTML = "Internal server error. Please try again."
+                document.getElementById("alertMsgIcon").classList.remove("fa-envelope");
+                document.getElementById("alertMsgIcon").classList.add("fa-circle-exclamation");
+
+                setTimeout(() => {
+                    setAlert(0);
+                }, 5000)
+            }
         }
     }
 
@@ -233,8 +261,8 @@ function ContactMe() {
                 <Form onSubmit={handleSubmit}>
                     {Alert === 1 &&
                         <div id="bootstrap_alert_box" className="alert alert-danger d-flex align-items-center bootstrap_alert_custom container-resize" role="alert">
-                            <i className="fa-solid fa-envelope me-2"></i>
-                            <div>
+                            <i id="alertMsgIcon" className="fa-solid fa-envelope me-2"></i>
+                            <div id="alertMsg">
                                 Use a valid Email address
                             </div>
                         </div>
@@ -265,21 +293,31 @@ function ContactMe() {
                             </InputForm>
                         </li>
                         <li>
-                            {!SentSuccess &&
-                                <ButtonContainer className="d-flex py-4">
-                                    <button type="button" id="NextButton" onClick={NextButtonHandler}>NEXT</button>
-                                    <input type="submit" id="finalContact" value="SEND YOUR MESSAGE" />
-                                </ButtonContainer>
-                            }
-                            {SentSuccess &&
+                            {(Sending) ?
                                 <ButtonContainer className="py-4">
                                     <SuccessfulButton type="button" className="d-flex align-items-center">
-                                        <ButtonText className="d-flex">
-                                            <lottie-player src="https://assets1.lottiefiles.com/temp/lf20_5tgmik.json" background="#58e2c4" speed="1" style={{ width: "1.5rem", height: "1.5rem" }} autoplay></lottie-player>
-                                            <div>SENT SUCCESSFULLY</div>
+                                        <ButtonText>
+                                            <img src="images/rolling_loader.svg" alt="Sending..." />
                                         </ButtonText>
                                     </SuccessfulButton>
                                 </ButtonContainer>
+                                :
+                                (!SentSuccess) ?
+                                    <ButtonContainer className="d-flex py-4">
+                                        <button type="button" id="NextButton" onClick={NextButtonHandler}>NEXT</button>
+                                        <input type="submit" id="finalContact" value="SEND YOUR MESSAGE" />
+                                    </ButtonContainer>
+                                    :
+                                    (SentSuccess && !Sending) ?
+                                        <ButtonContainer className="py-4">
+                                            <SuccessfulButton type="button" className="d-flex align-items-center">
+                                                <ButtonText className="d-flex">
+                                                    <lottie-player src="https://assets1.lottiefiles.com/temp/lf20_5tgmik.json" background="#58e2c4" speed="1" style={{ width: "1.5rem", height: "1.5rem" }} autoplay></lottie-player>
+                                                    <div>SENT SUCCESSFULLY</div>
+                                                </ButtonText>
+                                            </SuccessfulButton>
+                                        </ButtonContainer>
+                                        : <pre></pre>
                             }
                         </li>
                     </ul>
