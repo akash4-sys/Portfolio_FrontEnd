@@ -211,7 +211,7 @@ function ContactMe() {
 
             try {
                 setSending(true);
-                let res = await fetch("http://localhost:80/contactform/clientdetails", {
+                let res = await fetch("https://akash4-server.herokuapp.com/contactform/clientdetails", {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
