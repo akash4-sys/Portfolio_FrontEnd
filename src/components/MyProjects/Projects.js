@@ -55,7 +55,7 @@ function Projects() {
                     <RightCol className="text-start my-5 content">
                         <Title>
                             <FeaturedProject className="fs-5">Featured Project</FeaturedProject>
-                            <ProjectTitle href="/" className="fs-1">UltraChat</ProjectTitle>
+                            <ProjectTitle href="https://ultrachat.netlify.app/" className="fs-1">UltraChat</ProjectTitle>
                         </Title>
                         <LeftProjectDescription className="text-white p-3 rounded shadow-lg">
                             A MERN stack based chat application with Stream and Twilio. Download or send media, text, GIF, emoji's in Real time.
@@ -64,7 +64,7 @@ function Projects() {
                         <Tech>
                             MERN &nbsp;&nbsp; Stream &nbsp;&nbsp; Twilio &nbsp;&nbsp; Netlify &nbsp;&nbsp; CRUD &nbsp;&nbsp; Heroku
                         </Tech>
-                        <ProjectLink href="/" id="ProjectLink"><i className="fa-brands fa-github"></i></ProjectLink>
+                        <ProjectLink href="https://github.com/akash4-sys/MERN_CHAT_APP" id="ProjectLink"><i className="fa-brands fa-github"></i></ProjectLink>
                         &nbsp;&nbsp;&nbsp;&nbsp;
                         <ProjectLink href="https://ultrachat.netlify.app/"><i className="fa-solid fa-up-right-from-square"></i></ProjectLink>
                     </RightCol>
@@ -74,18 +74,17 @@ function Projects() {
                     <LeftCol className="text-end my-5 content thirdProject">
                         <Title>
                             <FeaturedProject className="fs-5">Featured Project</FeaturedProject>
-                            <ProjectTitle href="/" className="fs-1">Runner</ProjectTitle>
+                            <ProjectTitle href="https://pokemonadventure.netlify.app/" className="fs-1">Pokemon Adventures</ProjectTitle>
                         </Title>
                         <RightProjectDescription className="text-white p-3 rounded shadow-lg">
-                            A minimal, game developed in Vanilla Javascript just for your browser. Play the game,
-                            create your own levels and enjoy and beat people in leaderboard score.
+                            A openworld game for Pokemon fans developed in Vanilla Javascript and HTML canvas with basic and one on one pokemon fights.
                         </RightProjectDescription>
                         <Tech>
-                            JavaScript &nbsp;&nbsp; Heroku &nbsp;&nbsp; CRUD
+                            JavaScript &nbsp;&nbsp; Canvas &nbsp;&nbsp; GSAP
                         </Tech>
-                        <ProjectLink href="/" id="ProjectLink"><i className="fa-brands fa-github"></i></ProjectLink>
+                        <ProjectLink href="https://github.com/akash4-sys/Pokemon-Game" id="ProjectLink"><i className="fa-brands fa-github"></i></ProjectLink>
                         &nbsp;&nbsp;&nbsp;&nbsp;
-                        <ProjectLink href="/"><i className="fa-solid fa-up-right-from-square"></i></ProjectLink>
+                        <ProjectLink href="https://pokemonadventure.netlify.app/"><i className="fa-solid fa-up-right-from-square"></i></ProjectLink>
                     </LeftCol>
 
                 </Grid>
@@ -299,13 +298,18 @@ const ProjectImage = styled.div`
 `
 
 const ProjectImage2 = styled(ProjectImage)`
+    background: url('images/pokemongame.png') center center;
+    background-size: cover;
+    background-repeat: no-repeat;
     grid-row:4;
     animation-delay: 250ms;
     opacity:0;
 `
 
 const LeftProjectImage = styled(ProjectImage)`
-    background: url('images/laptop.jpg') center center;
+    background: url('images/ultrachat.png') center center;
+    background-size: cover;
+    background-repeat: no-repeat;
     grid-column: 2/4;
     grid-row: 2/4;
     animation-delay: 250ms;
