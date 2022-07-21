@@ -1,3 +1,4 @@
+
 import React, { useEffect, useContext } from 'react';
 import styled from 'styled-components';
 import { DarkNavContext } from '../DarkNavContext';
@@ -26,7 +27,7 @@ function Projects() {
         setContext('bg-transparent');
 
         return () => window.removeEventListener("scroll", onScroll);
-        
+
     }, []);
 
     return (
@@ -39,17 +40,17 @@ function Projects() {
                     <LeftCol className="text-end my-5 firstProject">
                         <Title>
                             <FeaturedProject className="fs-5">Featured Project</FeaturedProject>
-                            <ProjectTitle href="/" className="fs-1">Animezone</ProjectTitle>
+                            <ProjectTitle target="_blank" href="https://windows10chrome.netlify.app/" className="fs-1">Windows 10 Chrome</ProjectTitle>
                         </Title>
                         <RightProjectDescription className="text-white p-3 rounded shadow-lg">
-                            A mongodb and nodejs based website where you can read manga, watch anime and even write your own manga and publish it for community.
+                            Have true Windows 10 desktop experience directly in your browser with server side authentication using Node JS, SendGrid and Twilio.
                         </RightProjectDescription>
                         <Tech>
-                            Node.js &nbsp;&nbsp; Express &nbsp;&nbsp; Heroku &nbsp;&nbsp; CRUD &nbsp;&nbsp; SendGrid &nbsp;&nbsp; MongoDB &nbsp;&nbsp; GoogleAuth
+                            React JS &nbsp;&nbsp; Node JS &nbsp;&nbsp; PWA &nbsp;&nbsp; MongoDB &nbsp;&nbsp; Redux
                         </Tech>
-                        <ProjectLink href="/" id="ProjectLink"><i className="fa-brands fa-github"></i></ProjectLink>
+                        <ProjectLink href="" id="ProjectLink"><i className="fa-brands fa-github"></i></ProjectLink>
                         &nbsp;&nbsp;&nbsp;&nbsp;
-                        <ProjectLink href="/"><i className="fa-solid fa-up-right-from-square"></i></ProjectLink>
+                        <ProjectLink target="_blank" href="https://windows10chrome.netlify.app/"><i className="fa-solid fa-up-right-from-square"></i></ProjectLink>
                     </LeftCol>
 
                     <RightCol className="text-start my-5 content">
@@ -285,7 +286,7 @@ const RightCol = styled.div`
 `
 
 const ProjectImage = styled.div`
-    background: url('images/coding2.jpg') center center;
+    background: url('images/windows10.png') center center;
     background-size: cover;
     background-repeat: no-repeat;
     content:"";

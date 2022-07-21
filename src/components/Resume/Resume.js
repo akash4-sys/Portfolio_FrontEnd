@@ -12,9 +12,9 @@ function Resume() {
             </Left>
             <Container>
                 <Mobile><Anchor href="mailto:mishraakashmishra19@gmail.com">mishraakashmishra19@gmail.com</Anchor></Mobile>
-                <PdfLink href="Resume.pdf" target="_blank" className="float-end"> &gt;&gt; Checkout the pdf</PdfLink>
+                <PdfLink href="Resume_2022.pdf" target="_blank" className="float-end"> &gt;&gt; Checkout the pdf</PdfLink>
 
-                <ResumeImage src="/images/resume.jpg" alt="resume" />
+                <ResumeImage src="/images/Resume.png" alt="resume" />
 
                 <Mobile className="d-flex justify-content-between gap-3">
                     <Anchor href="Resume.pdf" target="_blank" className="float-end"> &gt;&gt; Checkout the pdf</Anchor>

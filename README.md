@@ -1,7 +1,6 @@
-TODO:
+# AKASH MISHRA - *My Portfolio*
+### OPEN TO WORK
+___
+Checkout my [**LinkedIn**](https://www.linkedin.com/in/akash-m-44724b1b7/) account
 
-<!-- Maybe create another website for this -->
-#4 extra idea create a admin access to upload code start something like blog post
-
-not possible #1 For each folder in my projects its details page should open up
-not possible #2 each arhive project details page with github and codechef like page to read the codec
+Checkout my [**LeetCode**](https://leetcode.com/CODEX47/) account

@@ -39,8 +39,13 @@ function Navbar() {
                             </ListElement>
                         </li>
                         <li className="nav-item mx-3 d-flex align-items-center justify-content-center">
-                            <ListElement className="nav-link active" href="https://www.linkedin.com/in/akash-mishra-242964230/" target="_blank">
+                            <ListElement className="nav-link active" href="https://www.linkedin.com/in/akash-m-44724b1b7/" target="_blank">
                                 <i className="fa-brands fa-linkedin text-white me-1"></i>LINKEDIN
+                            </ListElement>
+                        </li>
+                        <li className="nav-item mx-3 d-flex align-items-center justify-content-center">
+                            <ListElement className="nav-link active" href="https://leetcode.com/CODEX47/" target="_blank">
+                                <i className="fa-solid fa-code text-white me-1"></i>LEETCODE
                             </ListElement>
                         </li>
                     </ul>
