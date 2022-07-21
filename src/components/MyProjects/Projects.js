@@ -1,4 +1,3 @@
-
 import React, { useEffect, useContext } from 'react';
 import styled from 'styled-components';
 import { DarkNavContext } from '../DarkNavContext';
@@ -98,14 +97,15 @@ function Projects() {
                 </div>
 
                 <ProjectFolder>
-                    {/* window.location.href to open in same page */}
-                    <FolderItems className="content" onClick={() => (window.open('https://github.com/akash4-sys/Disney-clone'))}>
+                    <FolderItems className="content">
                         <Header className="m-4 d-flex align-items-center justify-content-between">
                             <i className="fa-solid fa-folder fa-2x"></i>
                             <div>
-                                <ProjectLink href="/" id="ProjectLink"><i className="fa-brands fa-github"></i></ProjectLink>
+                                <ProjectLink href="/https://github.com/akash4-sys/Disney-clone" id="ProjectLink" target="_blank">
+                                    <i className="fa-brands fa-github"></i>
+                                </ProjectLink>
                                 &nbsp;&nbsp;&nbsp;&nbsp;
-                                <ProjectLink href="/"><i className="fa-solid fa-up-right-from-square"></i></ProjectLink>
+                                <ProjectLink href="#"><i className="fa-solid fa-up-right-from-square"></i></ProjectLink>
                             </div>
                         </Header>
                         <span className="fs-3 fw-bold mx-4 mb-2">Disney Clone</span>
@@ -116,13 +116,15 @@ function Projects() {
                             Firebase &nbsp;&nbsp; React &nbsp;&nbsp; Redux
                         </Tech>
                     </FolderItems>
-                    <FolderItems className="content" onClick={() => (window.open('https://github.com/akash4-sys/Vanilla-JS-GAME'))}>
+                    <FolderItems className="content">
                         <Header className="m-4 d-flex align-items-center justify-content-between">
                             <i className="fa-solid fa-folder fa-2x"></i>
                             <div>
-                                <ProjectLink href="/" id="ProjectLink"><i className="fa-brands fa-github"></i></ProjectLink>
+                                <ProjectLink href='https://github.com/akash4-sys/Vanilla-JS-GAME' id="ProjectLink" target="_blank">
+                                    <i className="fa-brands fa-github"></i>
+                                </ProjectLink>
                                 &nbsp;&nbsp;&nbsp;&nbsp;
-                                <ProjectLink href="/"><i className="fa-solid fa-up-right-from-square"></i></ProjectLink>
+                                <ProjectLink href="#"><i className="fa-solid fa-up-right-from-square"></i></ProjectLink>
                             </div>
                         </Header>
                         <span className="fs-3 fw-bold mx-4 mb-2">Brick Breaker</span>
@@ -133,74 +135,25 @@ function Projects() {
                             Javascript
                         </Tech>
                     </FolderItems>
-                    <FolderItems className="content" onClick={() => (window.open('https://github.com/akash4-sys/MERN-Stack-Tutorial-1'))}>
-                        <Header className="m-4 d-flex align-items-center justify-content-between">
-                            <i className="fa-solid fa-folder fa-2x"></i>
-                            <div>
-                                <ProjectLink href="/" id="ProjectLink"><i className="fa-brands fa-github"></i></ProjectLink>
-                                &nbsp;&nbsp;&nbsp;&nbsp;
-                                <ProjectLink href="/"><i className="fa-solid fa-up-right-from-square"></i></ProjectLink>
-                            </div>
-                        </Header>
-                        <span className="fs-3 fw-bold mx-4 mb-2">Todo-List Application</span>
-                        <ProjectDescription className="mx-4 mb-4">
-                            A Tutorial MERN Stack CRUD Application for reading, writing and saving notes with a simple interface.
-                        </ProjectDescription>
-                        <Tech className="mx-4 mb-4 text-secondary">
-                            Firebase &nbsp;&nbsp; React &nbsp;&nbsp; Redux
-                        </Tech>
-                    </FolderItems>
-                    {/* <FolderItems className="content">
-                        <Header className="m-4 d-flex align-items-center justify-content-between">
-                            <i className="fa-solid fa-folder fa-2x"></i>
-                            <div>
-                                <ProjectLink href="/" id="ProjectLink"><i className="fa-brands fa-github"></i></ProjectLink>
-                                &nbsp;&nbsp;&nbsp;&nbsp;
-                                <ProjectLink href="/"><i className="fa-solid fa-up-right-from-square"></i></ProjectLink>
-                            </div>
-                        </Header>
-                        <span className="fs-3 fw-bold mx-4 mb-2">Disney Clone</span>
-                        <ProjectDescription className="mx-4 mb-4">
-                            Building a responsive Disney clone with react, redux toolkit, firebase authentication and firebase database.
-                        </ProjectDescription>
-                        <Tech className="mx-4 mb-4 text-secondary">
-                            Firebase &nbsp;&nbsp; React &nbsp;&nbsp; Redux
-                        </Tech>
-                    </FolderItems>
                     <FolderItems className="content">
                         <Header className="m-4 d-flex align-items-center justify-content-between">
                             <i className="fa-solid fa-folder fa-2x"></i>
                             <div>
-                                <ProjectLink href="/" id="ProjectLink"><i className="fa-brands fa-github"></i></ProjectLink>
+                                <ProjectLink href="https://github.com/akash4-sys/AnimeZone-app" id="ProjectLink" target="_blank">
+                                    <i className="fa-brands fa-github"></i>
+                                </ProjectLink>
                                 &nbsp;&nbsp;&nbsp;&nbsp;
-                                <ProjectLink href="/"><i className="fa-solid fa-up-right-from-square"></i></ProjectLink>
+                                <ProjectLink href="#"><i className="fa-solid fa-up-right-from-square"></i></ProjectLink>
                             </div>
                         </Header>
-                        <span className="fs-3 fw-bold mx-4 mb-2">Disney Clone</span>
+                        <span className="fs-3 fw-bold mx-4 mb-2">Animezone</span>
                         <ProjectDescription className="mx-4 mb-4">
-                            Building a responsive Disney clone with react, redux toolkit, firebase authentication and firebase database.
+                            A mongodb and nodejs based website where you can read manga, watch anime and even write your own manga and publish it for community.
                         </ProjectDescription>
                         <Tech className="mx-4 mb-4 text-secondary">
-                            Firebase &nbsp;&nbsp; React &nbsp;&nbsp; Redux
+                            Node.js &nbsp;&nbsp; Express &nbsp;&nbsp; Heroku &nbsp;&nbsp; CRUD &nbsp;&nbsp; SendGrid &nbsp;&nbsp; MongoDB &nbsp;&nbsp; GoogleAuth
                         </Tech>
                     </FolderItems>
-                    <FolderItems className="content">
-                        <Header className="m-4 d-flex align-items-center justify-content-between">
-                            <i className="fa-solid fa-folder fa-2x"></i>
-                            <div>
-                                <ProjectLink href="/" id="ProjectLink"><i className="fa-brands fa-github"></i></ProjectLink>
-                                &nbsp;&nbsp;&nbsp;&nbsp;
-                                <ProjectLink href="/"><i className="fa-solid fa-up-right-from-square"></i></ProjectLink>
-                            </div>
-                        </Header>
-                        <span className="fs-3 fw-bold mx-4 mb-2">Disney Clone</span>
-                        <ProjectDescription className="mx-4 mb-4">
-                            Building a responsive Disney clone with react, redux toolkit, firebase authentication and firebase database.
-                        </ProjectDescription>
-                        <Tech className="mx-4 mb-4 text-secondary">
-                            Firebase &nbsp;&nbsp; React &nbsp;&nbsp; Redux
-                        </Tech>
-                    </FolderItems> */}
                 </ProjectFolder>
 
                 <ThirdTitle className="text-center content fw-bold">Get In Touch</ThirdTitle>
