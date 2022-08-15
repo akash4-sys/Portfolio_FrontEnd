@@ -17,7 +17,7 @@ function Resume() {
                 <ResumeImage src="/images/Resume.png" alt="resume" />
 
                 <Mobile className="d-flex justify-content-between gap-3">
-                    <Anchor href="Resume.pdf" target="_blank" className="float-end"> &gt;&gt; Checkout the pdf</Anchor>
+                    <Anchor href="Resume_2022.pdf" target="_blank" className="float-end"> &gt;&gt; Checkout the pdf</Anchor>
                     <Anchor href="/mycertificates">My Certificates</Anchor>
                 </Mobile>
             </Container>
