@@ -159,9 +159,9 @@ function Projects() {
                 <ThirdTitle className="text-center content fw-bold">Get In Touch</ThirdTitle>
                 <div className="d-flex justify-content-center text-center pb-5">
                     <ContactMe className="w-50 content">
-                        Currently I am a student in his 3rd year of Computer Science Engineering
-                        with 5 months of experience as a web developer and I am looking for new opportunities.
-                        If you want to contact me my inbox is always open.
+                        Currently I am a student in his final year of Computer Science Engineering
+                        with 1 year of experience as a web developer and I am looking for new opportunities.
+                        If you want to contact men my inbox is always open.
                     </ContactMe>
                 </div>
                 <div className="d-flex justify-content-center pb-5 gap-3">
